@@ -1,48 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm04nw5vtbd23"]
+[gd_scene load_steps=4 format=3 uid="uid://bm04nw5vtbd23"]
 
-[ext_resource type="Script" path="res://Scripts/fake_player.gd" id="1_xv4ic"]
+[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="2_3m072"]
 
 [sub_resource type="Environment" id="Environment_hkbki"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xob4"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_exfl4"]
-material = SubResource("StandardMaterial3D_7xob4")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rl206"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c3ggg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ft57"]
+size = Vector3(0.1, 10, 10)
 
 [node name="Sea" type="Node3D"]
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.0377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.9005)
 environment = SubResource("Environment_hkbki")
-fov = 32.5
+fov = 19.5
 
-[node name="FakePlayer" type="CharacterBody3D" parent="."]
-axis_lock_linear_y = true
+[node name="Player" parent="." instance=ExtResource("2_3m072")]
+axis_lock_linear_x = false
+axis_lock_linear_y = false
 axis_lock_linear_z = true
-axis_lock_angular_y = true
 axis_lock_angular_z = true
-script = ExtResource("1_xv4ic")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FakePlayer"]
-mesh = SubResource("CapsuleMesh_exfl4")
+[node name="BoundingBoxes" type="Node3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FakePlayer"]
-shape = SubResource("CapsuleShape3D_rl206")
+[node name="StaticBody3D" type="StaticBody3D" parent="BoundingBoxes"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="FakePlayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94359, 4.765)
-light_energy = 100.0
-omni_range = 33.11
-omni_attenuation = 2.414
+[node name="RightWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+shape = SubResource("BoxShape3D_2ft57")
 
-[node name="BoudingBox" type="Area3D" parent="."]
+[node name="LeftWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+shape = SubResource("BoxShape3D_2ft57")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BoudingBox"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-shape = SubResource("BoxShape3D_c3ggg")
+[node name="BottomWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, -3, 0)
+shape = SubResource("BoxShape3D_2ft57")
 
-[connection signal="body_exited" from="BoudingBox" to="FakePlayer" method="_on_bouding_box_body_exited"]
+[node name="TopWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, 3, 0)
+shape = SubResource("BoxShape3D_2ft57")
