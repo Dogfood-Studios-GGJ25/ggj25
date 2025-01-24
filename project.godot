@@ -11,9 +11,6 @@ config_version=5
 [application]
 
 config/name="GGJ25_Dogfood_Studios"
+run/main_scene="res://Scenes/sea.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-
-[dotnet]
-
-project/assembly_name="GGJ25_Dogfood_Studios"

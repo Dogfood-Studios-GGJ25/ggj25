@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm04nw5vtbd23"]
+
+[ext_resource type="Script" path="res://Scripts/fake_player.gd" id="1_xv4ic"]
+[ext_resource type="Script" path="res://Scripts/area_3d.gd" id="2_xj33r"]
+
+[sub_resource type="Environment" id="Environment_hkbki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xob4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_exfl4"]
+material = SubResource("StandardMaterial3D_7xob4")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rl206"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3ggg"]
+
+[node name="Sea" type="Node3D"]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.0377)
+environment = SubResource("Environment_hkbki")
+
+[node name="FakePlayer" type="CharacterBody3D" parent="."]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_xv4ic")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FakePlayer"]
+mesh = SubResource("CapsuleMesh_exfl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakePlayer"]
+shape = SubResource("CapsuleShape3D_rl206")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="FakePlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94359, 4.765)
+light_energy = 100.0
+omni_range = 33.11
+omni_attenuation = 2.414
+
+[node name="BoudingBox" type="Area3D" parent="."]
+script = ExtResource("2_xj33r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoudingBox"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_c3ggg")
+
+[connection signal="child_entered_tree" from="BoudingBox/CollisionShape3D" to="FakePlayer" method="_on_collision_shape_3d_child_entered_tree"]
