@@ -25,8 +25,5 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func _on_collision_shape_3d_child_entered_tree(node: Node) -> void:
-	# stop player movement, since we're at the edge
-	print("At the edge!")
-	pass
-	
+func _on_bouding_box_body_exited(body: Node3D) -> void:
+	print_debug("Exited")

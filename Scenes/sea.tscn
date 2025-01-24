@@ -19,6 +19,7 @@ material = SubResource("StandardMaterial3D_7xob4")
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.0377)
 environment = SubResource("Environment_hkbki")
+fov = 32.5
 
 [node name="FakePlayer" type="CharacterBody3D" parent="."]
 axis_lock_linear_y = true
@@ -43,7 +44,7 @@ omni_attenuation = 2.414
 script = ExtResource("2_xj33r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoudingBox"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_c3ggg")
 
-[connection signal="child_entered_tree" from="BoudingBox/CollisionShape3D" to="FakePlayer" method="_on_collision_shape_3d_child_entered_tree"]
+[connection signal="body_exited" from="BoudingBox" to="FakePlayer" method="_on_bouding_box_body_exited"]
