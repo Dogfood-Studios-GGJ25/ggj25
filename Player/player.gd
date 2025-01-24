@@ -1,8 +1,5 @@
 extends CharacterBody3D
 
-@onready var constraint_area: Area3D = $"../BoudingBox"
-@onready var constraint_shape: CollisionShape3D = $"../BoudingBox/CollisionShape3D"
-
 const SPEED = 1.0
 const MAX_SPEED = 3.0
 const ACCELERATION_TIME = 0.8
@@ -12,9 +9,6 @@ const TERMINAL_VELOCITY = -0.5
 var current_speed_x: float = 0.0
 var current_speed_y: float = 0.0
 var gravity_velocity: float = 0.0 
-
-var canMoveLeft : bool = true
-var canMoveRight : bool = true
 
 func _physics_process(delta: float) -> void:
 
@@ -49,4 +43,3 @@ func on_interact(state):
 			print("QUICK TIME START")
 		"Jumpscare":
 			print("JUMPSCARE START")
-	
