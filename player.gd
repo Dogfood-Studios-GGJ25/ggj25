@@ -2,9 +2,8 @@ extends CharacterBody3D
 
 
 const SPEED = 1.0
-const MAX_SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-const ACCELERATION_TIME = 1.0 
+const MAX_SPEED = 4.0
+const ACCELERATION_TIME = 0.8
 const IDLE_GRAVITY = 0.5
 
 var current_speed_x: float = 0.0
