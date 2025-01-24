@@ -35,13 +35,14 @@ void vertex() {
 }
 
 void fragment() {
-	float scale = 0.05f;
-	float worley = worley(world_position.xz * scale + TIME * 0.25f, 3.0f, 3.0f);
-	float color = texture(color_ramp, vec2(worley)).r;
+	float scale = 0.1f;
+	float worley1 = worley(world_position.xz * scale + TIME * 0.25f, 3.0f, 3.0f);
+	float worley2 = worley(world_position.xz * scale - TIME * 0.25f, 3.0f, 3.0f);
+	float color = texture(color_ramp, vec2(worley1 * worley2)).r;
 	color = min(0.999, color);
 	color = log(0.999) / log(color);
-	color *= 2.0;
-	EMISSION = vec3(worley);
+	color *= 10.0;
+	EMISSION = vec3(worley1 * worley2);
 	ALPHA = color;
 }
 
