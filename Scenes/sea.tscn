@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm04nw5vtbd23"]
+
+[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="2_3m072"]
+
+[sub_resource type="Environment" id="Environment_hkbki"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ft57"]
+size = Vector3(0.1, 10, 10)
+
+[node name="Sea" type="Node3D"]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.9005)
+environment = SubResource("Environment_hkbki")
+fov = 19.5
+
+[node name="Player" parent="." instance=ExtResource("2_3m072")]
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = true
+axis_lock_angular_z = true
+
+[node name="BoundingBoxes" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BoundingBoxes"]
+
+[node name="RightWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+shape = SubResource("BoxShape3D_2ft57")
+
+[node name="LeftWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+shape = SubResource("BoxShape3D_2ft57")
+
+[node name="BottomWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, -3, 0)
+shape = SubResource("BoxShape3D_2ft57")
+
+[node name="TopWall" type="CollisionShape3D" parent="BoundingBoxes/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, 3, 0)
+shape = SubResource("BoxShape3D_2ft57")
