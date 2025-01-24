@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dd13j1y3vodxx"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://FMODBanks/Desktop/Master.bank"]
+
+[node name="FmodListener3D" type="FmodListener3D" parent="."]
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/BackgroundMusic"
+event_guid = "{0c8f796e-97aa-4183-819e-88d97c5348ad}"
+autoplay = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
