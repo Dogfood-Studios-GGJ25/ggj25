@@ -1,42 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0disnc7teec7"]
+[gd_scene load_steps=8 format=3 uid="uid://c7vlwpvuqj7a2"]
 
-[ext_resource type="Script" path="res://Scripts/particles.gd" id="1_4a5jk"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_o0n0e"]
-[ext_resource type="Script" path="res://Scripts/spot_light_3d.gd" id="2_lpfek"]
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_paulp"]
-
-[sub_resource type="Sky" id="Sky_ypve0"]
-sky_material = SubResource("PhysicalSkyMaterial_paulp")
-process_mode = 1
-
-[sub_resource type="Environment" id="Environment_amtkb"]
-background_mode = 2
-sky = SubResource("Sky_ypve0")
-ambient_light_source = 1
-ambient_light_color = Color(0.0458209, 2.40654e-08, 0.382735, 1)
-tonemap_mode = 2
-ssao_enabled = true
-sdfgi_enabled = true
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.2
-volumetric_fog_albedo = Color(0.718528, 0.78386, 1, 1)
-volumetric_fog_emission = Color(5.67943e-06, 0, 0.906579, 1)
-volumetric_fog_gi_inject = 0.0
-volumetric_fog_length = 4.0
-volumetric_fog_detail_spread = 6.0
-volumetric_fog_sky_affect = 0.5
+[ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_q22rq"]
+[ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Flashlight.tscn" id="3_k0c2f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3cu1o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ak6rt"]
-
-[sub_resource type="FogMaterial" id="FogMaterial_qg4md"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_x5ds5"]
-height = 5.0
-radius = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_yugyq"]
 
@@ -45,12 +15,7 @@ albedo_color = Color(0.777446, 0, 0.00090765, 1)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_amtkb")
-
-[node name="particles" type="Node3D" parent="WorldEnvironment"]
-script = ExtResource("1_4a5jk")
-particle_size = Vector2(0.001, 0.001)
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_q22rq")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -66,28 +31,7 @@ shape = SubResource("CapsuleShape3D_3cu1o")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Playerplaceholder"]
 mesh = SubResource("CapsuleMesh_ak6rt")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Playerplaceholder"]
-transform = Transform3D(0.000151079, -0.00154029, -0.999999, -0.000132424, 0.999999, -0.00154031, 1, 0.000132656, 0.000150875, 0.694477, 0, 0)
-light_color = Color(0.555646, 0.826809, 0.939066, 1)
-light_energy = 40.0
-light_indirect_energy = 6.576
-light_volumetric_fog_energy = 5.0
-light_size = 1.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 8.0
-script = ExtResource("2_lpfek")
-
-[node name="FogVolume" type="FogVolume" parent="Playerplaceholder/SpotLight3D"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
-visible = false
-material = SubResource("FogMaterial_qg4md")
-
-[node name="Area3D" type="Area3D" parent="Playerplaceholder/SpotLight3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Playerplaceholder/SpotLight3D/Area3D"]
-transform = Transform3D(1, 4.36557e-11, 4.36557e-11, 4.36557e-11, -4.36468e-08, 1, 0, -1, -4.36646e-08, -0.00193744, -0.00180166, -2.4883)
-shape = SubResource("CylinderShape3D_x5ds5")
+[node name="SpotLight3D" parent="Playerplaceholder" instance=ExtResource("3_k0c2f")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49012e-05, -0.00217056, 2.19498)

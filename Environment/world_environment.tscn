@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cndvi0d6a8f5v"]
+
+[ext_resource type="Script" path="res://Scripts/particles.gd" id="1_i3at5"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_paulp"]
+
+[sub_resource type="Sky" id="Sky_ypve0"]
+sky_material = SubResource("PhysicalSkyMaterial_paulp")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_amtkb"]
+background_mode = 2
+sky = SubResource("Sky_ypve0")
+ambient_light_source = 1
+ambient_light_color = Color(0.0458209, 2.40654e-08, 0.382735, 1)
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2
+volumetric_fog_albedo = Color(0.718528, 0.78386, 1, 1)
+volumetric_fog_emission = Color(5.67943e-06, 0, 0.906579, 1)
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_length = 4.0
+volumetric_fog_detail_spread = 6.0
+volumetric_fog_sky_affect = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_amtkb")
+
+[node name="particles" type="Node3D" parent="."]
+script = ExtResource("1_i3at5")
+particle_size = Vector2(0.001, 0.001)
