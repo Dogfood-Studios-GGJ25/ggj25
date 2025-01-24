@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://bhxogyr127ydx"]
+
+[ext_resource type="Resource" uid="uid://dce0li5qca4lr" path="res://Intro/Dialogic Style/styleforintro.tres" id="1_dusxb"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_78yru"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_ug8s0"]
+
+[sub_resource type="Resource" id="Resource_21d3o"]
+script = ExtResource("2_78yru")
+overrides = {
+"global_font_color": "Color(1, 1, 1, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_45187"]
+script = ExtResource("2_78yru")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_v73e5"]
+script = ExtResource("2_78yru")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_103tb"]
+script = ExtResource("2_78yru")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_3uftk"]
+script = ExtResource("2_78yru")
+overrides = {
+"text_custom_color": "Color(1, 1, 1, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_cg3xb"]
+script = ExtResource("2_78yru")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_6oy1t"]
+script = ExtResource("2_78yru")
+overrides = {
+"text_color_custom": "Color(1, 1, 1, 1)"
+}
+
+[sub_resource type="Resource" id="Resource_jjhq3"]
+script = ExtResource("2_78yru")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_bt0q6"]
+script = ExtResource("2_78yru")
+overrides = {}
+
+[resource]
+script = ExtResource("3_ug8s0")
+name = "protagoniststyle"
+inherits = ExtResource("1_dusxb")
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_21d3o"),
+"10": SubResource("Resource_45187"),
+"11": SubResource("Resource_v73e5"),
+"12": SubResource("Resource_103tb"),
+"13": SubResource("Resource_3uftk"),
+"14": SubResource("Resource_cg3xb"),
+"15": SubResource("Resource_6oy1t"),
+"16": SubResource("Resource_jjhq3"),
+"17": SubResource("Resource_bt0q6")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_78yru")]([])
+metadata/_latest_layer = "15"

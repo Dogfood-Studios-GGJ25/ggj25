@@ -1,0 +1,15 @@
+[signal arg="hey"]
+"walkie talkie voice": Hey.
+[signal arg="youready1"]
+"walkie talkie voice": You ready?
+protagonist: ...
+[signal arg="listen"]
+"walkie talkie voice": Listen, they’re probably fine. You know the radios tend to act up when you’re that deep. That’s all it was.
+[signal arg="formality"]
+"walkie talkie voice": This is a formality, and we’re professionals.
+[signal arg="beintouch"]
+"walkie talkie voice": I’ll be in touch. 
+[signal arg="youready2"]
+"walkie talkie voice": You ready?
+protagonist: …Yea.
+[signal arg="splash"]
