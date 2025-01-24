@@ -3,11 +3,41 @@
 [node name="AudioPlayer" type="Node3D"]
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 bank_paths = ["res://FMODBanks/Desktop/Master.strings.bank", "res://FMODBanks/Desktop/Master.bank"]
+script = null
 
 [node name="FmodListener3D" type="FmodListener3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 event_name = "event:/BackgroundMusic"
 event_guid = "{0c8f796e-97aa-4183-819e-88d97c5348ad}"
 autoplay = true
+script = null
