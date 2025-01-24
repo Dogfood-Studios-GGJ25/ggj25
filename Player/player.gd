@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@onready var constraint_area: Area3D = $"../BoudingBox"
+@onready var constraint_shape: CollisionShape3D = $"../BoudingBox/CollisionShape3D"
 
 const SPEED = 1.0
 const MAX_SPEED = 3.0
@@ -11,15 +13,16 @@ var current_speed_x: float = 0.0
 var current_speed_y: float = 0.0
 var gravity_velocity: float = 0.0 
 
+var canMoveLeft : bool = true
+var canMoveRight : bool = true
 
 func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("debug_1"):
 		on_interact("quick_time")
-
+	
 	var input_dir := Input.get_vector("player_left", "player_right","player_up", "player_down")
 	var direction := (transform.basis * Vector3(input_dir.x, input_dir.y, 0)).normalized()
-	
 	
 	if abs(direction.x) > 0:
 		current_speed_x = move_toward(current_speed_x, MAX_SPEED * sign(direction.x), 
@@ -46,4 +49,4 @@ func on_interact(state):
 			print("QUICK TIME START")
 		"Jumpscare":
 			print("JUMPSCARE START")
-		
+	
