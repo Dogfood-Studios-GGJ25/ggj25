@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvhat66qqib7h"]
+
+[ext_resource type="PackedScene" uid="uid://tvy3kvtneni8" path="res://divinglevel.tscn" id="1_pcfe6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e4ntq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_i48yw"]
+sky_material = SubResource("ProceduralSkyMaterial_e4ntq")
+
+[sub_resource type="Environment" id="Environment_yjlfd"]
+background_mode = 2
+sky = SubResource("Sky_i48yw")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Seafloor" type="Node3D"]
+
+[node name="divinglevel" parent="." instance=ExtResource("1_pcfe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -560.358)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yjlfd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
