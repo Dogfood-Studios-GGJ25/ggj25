@@ -13,6 +13,11 @@ func _ready():
 	# Create a unique material instance for this mesh
 	original_material = material_override.duplicate()
 	material_override = original_material
+	
+	# Connect to the spotlight's signals
+	var spotlight = $"../SpotLight3D"  # Adjust this path to your spotlight
+	spotlight.object_entered_light.connect(_on_spotlight_entered)
+	spotlight.object_exited_light.connect(_on_spotlight_exited)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,12 +28,14 @@ func _process(delta):
 	# Gentle rotation around Y axis
 	rotate_y(rotation_speed * delta)
 
-# This function should be called from the other scene
-func change_to_purple():
-	if material_override is StandardMaterial3D:
-		material_override.albedo_color = bright_purple
+func _on_spotlight_entered(object: Node3D):
+	if object == self:  # Only respond if we're the object that entered
+		if material_override is StandardMaterial3D:
+			material_override.albedo_color = Color.WHITE
+			print("Entered light!")
 
-# This function should be called from the other scene
-func reset_color():
-	if material_override is StandardMaterial3D:
-		material_override.albedo_color = Color.WHITE
+func _on_spotlight_exited(object: Node3D):
+	if object == self:  # Only respond if we're the object that exited
+		if material_override is StandardMaterial3D:
+			material_override.albedo_color = bright_purple
+			print("Exited light!")

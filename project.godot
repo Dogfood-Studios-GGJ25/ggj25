@@ -14,3 +14,9 @@ config/name="GGJ25_Dogfood_Studios"
 run/main_scene="res://playerLight.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
+global_illumination/voxel_gi/quality=1

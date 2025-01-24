@@ -29,8 +29,12 @@ func _physics_process(delta):
 
 
 func _on_spot_light_3d_object_entered_light(object):
-	pass # Replace with function body.
+	if object == self:  # Only respond if we're the object that entered
+		print("Entered light!")
+		# Add your response code here
 
 
 func _on_spot_light_3d_object_exited_light(object):
-	pass # Replace with function body.
+	if object == self:  # Only respond if we're the object that exited
+		print("Exited light!")
+		# Add your response code here
