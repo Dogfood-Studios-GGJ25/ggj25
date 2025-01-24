@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds2x5oq5ienrx"]
+[gd_scene load_steps=7 format=3 uid="uid://ds2x5oq5ienrx"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_iijgt"]
+[ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Flashlight.tscn" id="2_pb1ki"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ha2lk"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_681b3"]
+transparency = 1
+albedo_color = Color(0.772549, 0.772549, 0.772549, 0.27451)
+
 [sub_resource type="SphereMesh" id="SphereMesh_uj22g"]
+material = SubResource("StandardMaterial3D_681b3")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6r5ev"]
 
 [node name="Player" type="CharacterBody3D"]
 axis_lock_linear_x = true
@@ -17,3 +25,13 @@ shape = SubResource("SphereShape3D_ha2lk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_uj22g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_6r5ev")
+skeleton = NodePath("../..")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+
+[node name="SpotLight3D" parent="SpringArm3D" instance=ExtResource("2_pb1ki")]
+transform = Transform3D(0.000151079, -0.00154029, -0.999999, -0.000132424, 0.999999, -0.00154031, 1, 0.000132657, 0.000150875, 0.694477, 0, 0)

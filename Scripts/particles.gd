@@ -7,9 +7,11 @@ extends Node3D
 @export var float_speed := 0.2
 @export var player_influence := 0.3
 
+@onready var player: CharacterBody3D = $"../../Player"
+
 var particles: MultiMesh
 var time := 0.0
-var player: Node3D
+
 
 func _ready():
 	# Create particle system

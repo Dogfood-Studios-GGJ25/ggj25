@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm04nw5vtbd23"]
+[gd_scene load_steps=6 format=3 uid="uid://bm04nw5vtbd23"]
 
+[ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_5qxhj"]
 [ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="2_3m072"]
+[ext_resource type="Script" path="res://Scripts/particles.gd" id="2_7jawa"]
 [ext_resource type="PackedScene" uid="uid://dd13j1y3vodxx" path="res://Audio/FMOD_Test.tscn" id="2_sjdab"]
-
-[sub_resource type="Environment" id="Environment_hkbki"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ft57"]
 size = Vector3(0.1, 10, 10)
 
 [node name="Sea" type="Node3D"]
 
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_5qxhj")]
+
+[node name="particles" type="Node3D" parent="WorldEnvironment"]
+script = ExtResource("2_7jawa")
+particle_size = Vector2(0.001, 0.001)
+player_influence = 0.2
+
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.9005)
-environment = SubResource("Environment_hkbki")
 fov = 19.5
 
 [node name="Player" parent="." instance=ExtResource("2_3m072")]

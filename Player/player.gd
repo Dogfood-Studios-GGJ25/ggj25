@@ -44,3 +44,14 @@ func on_interact(state):
 		"Jumpscare":
 			print("JUMPSCARE START")
 	
+
+func _on_spot_light_3d_object_entered_light(object):
+	if object == self:  # Only respond if we're the object that entered
+		print("Entered light!")
+		# Add your response code here
+
+
+func _on_spot_light_3d_object_exited_light(object):
+	if object == self:  # Only respond if we're the object that exited
+		print("Exited light!")
+		# Add your response code here
