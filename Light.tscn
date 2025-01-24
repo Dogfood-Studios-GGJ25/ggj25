@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://jsrq5i770hx6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f1ph7"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_yx11d"]
+sky_material = SubResource("ProceduralSkyMaterial_f1ph7")
+
+[sub_resource type="Environment" id="Environment_ip78y"]
+background_mode = 2
+sky = SubResource("Sky_yx11d")
+ambient_light_source = 2
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+
+[sub_resource type="FogMaterial" id="FogMaterial_xnov5"]
+density = 3.0
+albedo = Color(0.131722, 1.34766e-06, 0.645689, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ip78y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+light_energy = 20.0
+light_volumetric_fog_energy = 0.5
+light_size = 5.0
+shadow_enabled = true
+distance_fade_enabled = true
+
+[node name="FogVolume" type="FogVolume" parent="SpotLight3D"]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0, 0, 0)
+material = SubResource("FogMaterial_xnov5")
