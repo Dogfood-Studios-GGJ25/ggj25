@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var oxy_level: Label3D = $OxyLevel
 
 @export var oxygen_level : int = 100
+@export var flashlight_level : int = 100
 
 const SPEED = 1.0
 const MAX_SPEED = 3.0
@@ -36,15 +37,15 @@ func _physics_process(delta: float) -> void:
 	var world_pos = ray_origin + ray_direction * t
 	spring_arm.look_at(world_pos)
 
-
 # actions
 	if Input.is_action_just_pressed("mouse_left_click"):
 		if spotlight.visible:
 			spotlight_state = false
 			spotlight.visible = false
 		else:
-			spotlight_state = true
-			spotlight.visible = true
+			if flashlight_level > 0:
+				spotlight_state = true
+				spotlight.visible = true		
 	
 # directional input
 	var input_dir := Input.get_vector("player_left", "player_right","player_up", "player_down")
