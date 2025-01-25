@@ -1,19 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://jv1lxee8i1an"]
+[gd_scene load_steps=18 format=3 uid="uid://c2gr4vsmfd77f"]
 
 [ext_resource type="Script" path="res://LevelScripts/leveldesign.gd" id="1_1gpiy"]
 [ext_resource type="Script" path="res://game_ender.gd" id="1_836wd"]
 [ext_resource type="PackedScene" uid="uid://tvy3kvtneni8" path="res://divinglevel.tscn" id="1_dcoo6"]
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_ucrc6"]
 [ext_resource type="Script" path="res://Scripts/particles.gd" id="2_75p1g"]
-[ext_resource type="PackedScene" uid="uid://cc20ff53teico" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
-[ext_resource type="PackedScene" uid="uid://cwhrr5vxmekiu" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]
-[ext_resource type="PackedScene" uid="uid://5speyvvxxkba" path="res://Meshes/preparedrock3.tscn" id="4_dkbql"]
-[ext_resource type="PackedScene" uid="uid://cnyqv7dko6y5q" path="res://Player/bounding_player_box.tscn" id="4_ontjx"]
-[ext_resource type="PackedScene" uid="uid://72hykw7r04vr" path="res://Meshes/preparedrock4.tscn" id="5_uokvx"]
-[ext_resource type="PackedScene" uid="uid://bvjqu1klod5fi" path="res://Meshes/preparedrock5.tscn" id="6_nycnj"]
-[ext_resource type="PackedScene" uid="uid://ysw2rs6sq3qg" path="res://Meshes/preparedrock6.tscn" id="7_lay7s"]
-[ext_resource type="PackedScene" uid="uid://dfmyh0eg0tb2y" path="res://eye.tscn" id="8_d63hi"]
-[ext_resource type="PackedScene" uid="uid://d1kv872rstbdn" path="res://rockeyelids.tscn" id="9_8idos"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock3.tscn" id="4_dkbql"]
+[ext_resource type="PackedScene" path="res://Player/bounding_player_box.tscn" id="4_ontjx"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock4.tscn" id="5_uokvx"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock5.tscn" id="6_nycnj"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock6.tscn" id="7_lay7s"]
+[ext_resource type="PackedScene" path="res://eye.tscn" id="8_d63hi"]
+[ext_resource type="PackedScene" path="res://rockeyelids.tscn" id="9_8idos"]
+[ext_resource type="Texture2D" uid="uid://dxm1i1dlo51xl" path="res://littleFish.png" id="15_tpr5o"]
+[ext_resource type="Script" path="res://littleFish_3d.gd" id="16_0em4d"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_mjxo8"]
 
@@ -274,3 +276,58 @@ transform = Transform3D(1.17121, -0.0642956, 1.03603, -0.323708, 1.46148, 0.4566
 
 [node name="rockeyelids2" parent="Level/eyelids" instance=ExtResource("9_8idos")]
 transform = Transform3D(-0.622064, 0.377023, 1.07745, 0.188511, 1.24413, -0.326511, -1.12583, 1.93715e-08, -0.65, 8.38724, -99.8801, 4.19437)
+
+[node name="littleFishes" type="Node" parent="Level"]
+
+[node name="LittleFish01" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.758762, 20.7373, 0.739791)
+flip_h = true
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish02" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.793071, 17.5424, 0.925405)
+flip_h = true
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish03" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 14.7136, 0.604672)
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish04" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.21623, 17.3786, -1.38201)
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish05" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.157233, 21.8424, -2.71806)
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish06" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.344367, 19.3519, -0.180638)
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish07" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.0968, 17.5037, -3.3749)
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish08" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.00428677, 18.4196, 0.401824)
+flip_h = true
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish09" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.34321, 20.8301, 0.121313)
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
+
+[node name="LittleFish10" type="Sprite3D" parent="Level/littleFishes"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 22.8596, -0.468453)
+texture = ExtResource("15_tpr5o")
+script = ExtResource("16_0em4d")
