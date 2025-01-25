@@ -80,4 +80,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.696432, 0)
 billboard = 1
 text = "100"
 
+[node name="OxygenTimer" type="Timer" parent="OxyLevel"]
+autostart = true
+
 [connection signal="object_detected" from="SpringArm3D/SpotLight3D" to="." method="_on_spot_light_3d_object_detected"]
+[connection signal="timeout" from="OxyLevel/OxygenTimer" to="." method="_on_oxygen_timer_timeout"]

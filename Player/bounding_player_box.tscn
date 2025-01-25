@@ -16,6 +16,7 @@ script = ExtResource("2_cbpkb")
 
 [node name="Timer" type="Timer" parent="BubbleSpawRefPoint"]
 process_callback = 0
+wait_time = 2.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("3_ai6ne")]

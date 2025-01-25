@@ -7,6 +7,8 @@ extends CharacterBody3D
 @export var oxygen_level : int = 100
 @export var flashlight_level : int = 100
 
+signal player_death
+
 const SPEED = 1.0
 const MAX_SPEED = 3.0
 const ACCELERATION_TIME = 0.8
@@ -72,7 +74,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func update_o2_label():
-	oxy_level.text = "O2: " + str(oxygen_level)
+	if oxygen_level >= 0:
+		oxy_level.text = "O2: " + str(oxygen_level)
 
 func interact_with_bubbles() -> void:
 	for i in get_slide_collision_count():
@@ -93,3 +96,16 @@ func on_interact(state):
 
 func _on_spot_light_3d_object_detected(object: Variant) -> void:
 	print("Detected object in spotlight:", object)
+
+func _on_oxygen_timer_timeout() -> void:
+	oxygen_level -= 1
+	update_o2_label()
+	if oxygen_level == 0:
+		set_process(false)
+		set_physics_process(false)
+		# wait a couple of seconds and then emit the player_death signal
+		await get_tree().create_timer(3.0).timeout
+		player_death.emit()
+		get_tree().change_scene_to_file("res://UI/Credits.tscn")
+		
+	
