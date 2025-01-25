@@ -69,6 +69,9 @@ var credits = [
 		"Credits Screen by MiDe",
 		"https://godotengine.org/asset-library/asset/2411"
 	],[
+		"Asset credits",
+		"Cute Astronaut by Kamilla Kraus https://fab.com/s/de16dc292b6d"
+	],[
 		"Special thanks",
 		"My parents",
 		"My friends",
