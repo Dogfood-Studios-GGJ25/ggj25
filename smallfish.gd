@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Sprite3D
 var speed = 0.3
 var angle = -PI
 var time = 0
@@ -29,7 +29,7 @@ func swim(delta):
 		print_debug("swimtime: ", swimtime)
 		print_debug("time: ", time)
 		if time <= swimtime:
-			var velocity = Vector2.LEFT.rotated(rotation) * speed
+			var velocity = Vector3.LEFT.rotated(rotation) * speed
 			position += velocity
 		else:
 			time = 0

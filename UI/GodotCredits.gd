@@ -36,8 +36,11 @@ var credits = [
 		"Don't Look Back"
 	],[
 		"Programming",
-		"Dennis Kirsch",
+		"Laura van Helden",
+		"Melissa Issaoun",
 		"Erwin Bell",
+		"Dennis Kirsch",
+		"Michael Schifferling",
 		"Ruben Steins",
 		"Louis van Zijst"
 	],[
@@ -55,9 +58,7 @@ var credits = [
 		"Melissa Issaoun"
 	],[
 		"Testers",
-		"Huey",
-		"Duey",
-		"Luey"
+		"Captain T.M.Effort",
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
@@ -76,6 +77,8 @@ var credits = [
 		"My parents",
 		"My friends",
 		"My pet rabbit"
+	],[
+		"No animals (or divers) were hurt during the building of this game."
 	]
 ]
 
@@ -91,6 +94,7 @@ func _ready():
 	else:
 		videoplayer.set_volume_db(0)
 	videoplayer.play()
+	BGMusic.play_credits_music()
 	
 
 func _process(delta):

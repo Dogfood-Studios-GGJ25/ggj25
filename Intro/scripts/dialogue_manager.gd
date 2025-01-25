@@ -14,7 +14,7 @@ var audio_dict = {
 	"beintouch": preload("res://Intro/audio/be in touch.mp3"),
 	"boom": preload("res://Intro/audio/boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3")}
 
-@onready var next_scene = preload("res://Scenes/sea.tscn")
+@onready var next_scene = preload("res://leveldesign.tscn")
 
 func _ready():
 	cover.visible = false
@@ -40,6 +40,7 @@ func _on_dialogic_signal(argument: String):
 			title.visible = true
 			await get_tree().create_timer(5.0).timeout
 			
+			BGMusic.play_main_music()
 			# Add scene transition here
 			change_scene()
 	else:

@@ -2,6 +2,13 @@ extends CharacterBody3D
 
 @onready var spring_arm = $SpringArm3D
 @onready var spotlight = $SpringArm3D/SpotLight3D
+@onready var oxy_level: Label3D = $OxyLevel
+@onready var lighting: DirectionalLight3D = $"../DirectionalLight3D"
+
+@export var oxygen_level : int = 100
+@export var flashlight_level : int = 100
+
+signal player_death
 
 const SPEED = 1.0
 const MAX_SPEED = 3.0
@@ -16,10 +23,13 @@ var camera
 
 var spotlight_state: bool = false
 
-
 func _ready():
 	camera = get_tree().get_first_node_in_group("Camera3D")
+	update_o2_label()
 
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("quit"):
+		get_tree().quit()
 
 func _physics_process(delta: float) -> void:
 # Spotlight looking at mouse position
@@ -36,8 +46,9 @@ func _physics_process(delta: float) -> void:
 			spotlight_state = false
 			spotlight.visible = false
 		else:
-			spotlight_state = true
-			spotlight.visible = true
+			if flashlight_level > 0:
+				spotlight_state = true
+				spotlight.visible = true		
 	
 # directional input
 	var input_dir := Input.get_vector("player_left", "player_right","player_up", "player_down")
@@ -60,8 +71,21 @@ func _physics_process(delta: float) -> void:
 	velocity.x = current_speed_x
 	velocity.y = current_speed_y + gravity_velocity
 
+	interact_with_bubbles()
 	move_and_slide()
 
+func update_o2_label():
+	if oxygen_level >= 0:
+		oxy_level.text = "O2: " + str(oxygen_level)
+
+func interact_with_bubbles() -> void:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider is Bubble:
+			var o2_gained = collider.pop_for_oxygen()
+			oxygen_level += o2_gained
+			update_o2_label()
 
 func on_interact(state):
 	match state:
@@ -73,3 +97,16 @@ func on_interact(state):
 
 func _on_spot_light_3d_object_detected(object: Variant) -> void:
 	print("Detected object in spotlight:", object)
+
+func _on_oxygen_timer_timeout() -> void:
+	oxygen_level -= 1
+	update_o2_label()
+	if oxygen_level == 0:
+		set_process(false)
+		set_physics_process(false)
+		# wait a couple of seconds and then emit the player_death signal
+		await get_tree().create_timer(3.0).timeout
+		player_death.emit()
+		get_tree().change_scene_to_file("res://UI/Credits.tscn")
+		
+	
