@@ -8,7 +8,7 @@
 # Don't look back
 
 ## Vision
-Vertical scrolling thriller, diving in an air bubble in deep ocean accompanied by the dangers of the depth...
+A slow decent into deep ocean accompanied by ...
 
 ## MDA
 ### Fear
@@ -25,3 +25,8 @@ Vertical scrolling thriller, diving in an air bubble in deep ocean accompanied b
 
 ## Controls
 - arrow-keys, y-axis inverted
+
+## Enemies
+- Small fish, just nibble, don't really hurt you
+- Big Fish, megalodon coming very close, disturbing you with their wake
+- Sea horse - great white combo (great white size, teeth and red mouth) actually eats you
