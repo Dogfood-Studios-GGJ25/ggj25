@@ -1,11 +1,9 @@
-[gd_scene load_steps=30 format=4 uid="uid://jv1lxee8i1an"]
+[gd_scene load_steps=34 format=4 uid="uid://jv1lxee8i1an"]
 
 [ext_resource type="Script" path="res://LevelScripts/leveldesign.gd" id="1_1gpiy"]
 [ext_resource type="Script" path="res://game_ender.gd" id="1_836wd"]
-
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_ucrc6"]
 [ext_resource type="Script" path="res://Scripts/particles.gd" id="2_75p1g"]
-
 [ext_resource type="PackedScene" uid="uid://cc20ff53teico" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
 [ext_resource type="PackedScene" uid="uid://cwhrr5vxmekiu" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]
 [ext_resource type="PackedScene" uid="uid://5speyvvxxkba" path="res://Meshes/preparedrock3.tscn" id="4_dkbql"]
@@ -181,173 +179,13 @@ particle_color = Color(1, 1, 1, 1)
 player_influence = 0.2
 
 [node name="BoundingPlayerBox" parent="." instance=ExtResource("4_ontjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 63.632, 0)
 
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="GameEnder" type="Node" parent="Level"]
 script = ExtResource("1_836wd")
-
-[node name="rocks" type="Node3D" parent="."]
-
-[node name="SM_LittleRock_01" parent="rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(5.845, 0, 0, 0, 5.845, 0, 0, 0, 5.845, -4.07042, -4.87269, -7.45249)
-
-
-[node name="SM_LittleRock_02" parent="Level/rocks" instance=ExtResource("3_sl5a2")]
-transform = Transform3D(2.15689, 0, -0.349378, 0, 2.185, 0, 0.349378, 0, 2.15689, 2.09254, -4.47076, -2.08683)
-
-[node name="SM_LittleRock_03" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(0.596071, 0.798234, -0.0867301, 0, 0.108017, 0.994149, 0.802932, -0.592583, 0.0643856, 0.169951, -2.48815, -4.61003)
-
-[node name="SM_LittleRock_04" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(2.94062, 0, 3.74304, 0, 4.76, 0, -3.74304, 0, 2.94062, 2.05119, -13.8486, -10.2141)
-
-[node name="SM_LittleRock_05" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(-3.3646, 1.7337, 1.471e-09, -0.0274431, -0.0532589, 3.78453, 1.73348, 3.36418, 0.0599136, -4.96452, -9.98075, -8.14404)
-
-[node name="SM_LittleRock_06" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(5.57, 0, 0, 0, 4.87253, -2.69877, 0, 2.69877, 4.87253, -12.2957, -15.2313, -9.7399)
-
-[node name="SM_LittleRock_07" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(5.615, 0, 0, 0, 5.615, 0, 0, 0, 5.615, 6.07231, -12.1824, -12.713)
-
-[node name="SM_LittleRock_08" parent="Level/rocks" instance=ExtResource("7_lay7s")]
-transform = Transform3D(-6.77258, 0.582956, -1.29568, -1.42079, -2.77882, 6.17624, 0, 6.31068, 2.83931, 6.62879, -20.5374, -22.3463)
-
-[node name="SM_LittleRock_10" parent="Level/rocks" instance=ExtResource("7_lay7s")]
-transform = Transform3D(6.958, -1.05934, 1.63237, 1.94598, 3.78777, -5.83666, 0, 6.06063, 3.93311, 19.7922, -18.7534, -16.2778)
-
-[node name="SM_LittleRock_09" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(7.77, 0, 0, 0, 7.77, 0, 0, 0, 7.77, -7.93023, -39.3091, -15.1388)
-
-[node name="SM_LittleRock_11" parent="Level/rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(13.555, 0, 0, 0, 3.32124, -13.1418, 0, 13.1418, 3.32124, 31.3818, -11.5098, -27.381)
-
-
-[node name="SM_LittleRock_48" parent="rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(10.1152, 2.2109, -8.74832, -9.02338, 2.47841, -9.80683, 0, 13.1418, 3.32124, 28.4547, 8.98002, -27.381)
-
-[node name="SM_LittleRock_15" parent="rocks" instance=ExtResource("7_lay7s")]
-
-transform = Transform3D(6.958, -1.05934, 1.63237, 1.94598, 3.78777, -5.83666, 0, 6.06063, 3.93311, -19.4862, -51.3862, -16.9584)
-
-[node name="SM_LittleRock_16" parent="Level/rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(13.555, 0, 0, 0, 3.32124, -13.1418, 0, 13.1418, 3.32124, -2.60999, -50.5172, -27.381)
-
-[node name="SM_LittleRock_12" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(4.015, 0, 0, 0, 4.015, 0, 0, 0, 4.015, -17.0024, -11.6382, -3.65488)
-
-[node name="SM_LittleRock_35" parent="Level/rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(5.845, 0, 0, 0, 5.845, 0, 0, 0, 5.845, -18.8017, -4.81358, -7.48022)
-
-[node name="SM_LittleRock_36" parent="Level/rocks" instance=ExtResource("3_sl5a2")]
-transform = Transform3D(2.15689, 0, -0.349378, 0, 2.185, 0, 0.349378, 0, 2.15689, -12.5228, -4.47076, -2.08683)
-
-[node name="SM_LittleRock_37" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(5.57, 0, 0, 0, 4.87253, -2.69877, 0, 2.69877, 4.87253, -26.911, -15.2313, -9.7399)
-
-[node name="SM_LittleRock_38" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(7.77, 0, 0, 0, 7.77, 0, 0, 0, 7.77, -22.5455, -39.3091, -15.1388)
-
-[node name="SM_LittleRock_39" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(4.015, 0, 0, 0, 4.015, 0, 0, 0, 4.015, -31.6177, -11.6382, -3.65488)
-
-[node name="SM_LittleRock_17" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(-7.22699, 3.7239, 6.82479e-09, -0.0589465, -0.114398, 8.12898, 3.72344, 7.22609, 0.128692, 15.4487, -58.3278, -11.372)
-
-[node name="SM_LittleRock_18" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(8.13, 0, 0, 0, 8.13, 0, 0, 0, 8.13, 26.4855, -60.5295, -12.713)
-
-[node name="SM_LittleRock_19" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(8.13, 0, 0, 0, 8.13, 0, 0, 0, 8.13, 3.41082, -59.9853, -12.5163)
-
-[node name="SM_LittleRock_13" parent="Level/rocks" instance=ExtResource("7_lay7s")]
-transform = Transform3D(-6.77258, 0.582956, -1.29568, -1.42079, -2.77882, 6.17624, 0, 6.31068, 2.83931, 26.0805, -30.3742, -22.3463)
-
-[node name="SM_LittleRock_14" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(7.77, 0, 0, 0, 7.77, 0, 0, 0, 7.77, 11.5215, -49.1458, -15.1388)
-
-[node name="SM_LittleRock_20" parent="Level/rocks" instance=ExtResource("3_sl5a2")]
-transform = Transform3D(2.04295, -0.700756, -0.330923, 0.69174, 2.06958, -0.11205, 0.349378, 4.00483e-09, 2.15689, -25.2944, -55.4, -2.08683)
-
-[node name="SM_LittleRock_21" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(0.564584, 0.721426, -0.400984, 0.191167, 0.358314, 0.913819, 0.802932, -0.592583, 0.0643856, -27.7513, -54.1387, -4.61003)
-
-[node name="SM_LittleRock_22" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(2.78529, -1.52659, 3.54532, 0.943093, 4.50856, 1.20044, -3.74304, -9.63549e-09, 2.94062, -22.326, -64.2957, -10.2141)
-
-[node name="SM_LittleRock_23" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(-3.17807, 1.6592, -1.21374, -1.10506, 0.505573, 3.58461, 1.73348, 3.36418, 0.0599136, -30.2115, -62.8822, -8.14404)
-
-[node name="SM_LittleRock_24" parent="Level/rocks" instance=ExtResource("7_lay7s")]
-transform = Transform3D(2.99243, 2.56011, -5.69013, -6.23953, 1.22781, -2.72894, 9.91158e-08, 6.31068, 2.83931, -15.845, -69.1632, -22.3463)
-
-[node name="SM_LittleRock_25" parent="Level/rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(12.839, -1.06516, 4.21474, 4.34725, 3.1458, -12.4476, -7.19394e-08, 13.1418, 3.32124, -14.9809, -100.522, -27.381)
-
-[node name="SM_LittleRock_26" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(-7.72462, -1.25134, -2.20485, -2.37362, 1.08595, 7.69958, -0.890581, 7.95938, -1.39714, 4.62887, -102.129, -10.5933)
-
-[node name="SM_LittleRock_27" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(7.70055, -2.60739, 0, 2.60739, 7.70055, 0, 0, 0, 8.13, 15.7888, -100.674, -12.713)
-
-[node name="SM_LittleRock_28" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(7.70055, -2.60739, 0, 2.60739, 7.70055, 0, 0, 0, 8.13, -6.24154, -107.559, -8.62885)
-
-[node name="SM_LittleRock_31" parent="Level/rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(4.86452, -3.1, 12.2664, 12.6521, 1.1919, -4.71624, -1.67597e-07, 13.1418, 3.32124, 25.5897, -100.256, -27.381)
-
-[node name="SM_LittleRock_32" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(-2.53855, 1.44318, -7.58748, -6.76673, 3.43479, 2.91727, 3.72344, 7.22609, 0.128692, 39.3608, -86.2037, -8.14404)
-
-[node name="SM_LittleRock_33" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(2.91764, -7.58843, 0, 7.58843, 2.91764, 0, 0, 0, 8.13, 45.3767, -76.6921, -12.713)
-
-[node name="SM_LittleRock_34" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(2.91764, -7.58843, 0, 7.58843, 2.91764, 0, 0, 0, 8.13, 36.5879, -98.0345, -8.62885)
-
-[node name="SM_LittleRock_47" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(6.30057, 5.13807, 0, -5.13807, 6.30057, 0, 0, 0, 8.13, 36.5879, -109.215, -8.62885)
-
-[node name="SM_LittleRock_40" parent="Level/rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(-8.77106, -0.215379, 0.852231, 0.879025, -2.14908, 8.5037, 0, 8.5463, 2.15985, 41.6214, -131.818, -27.381)
-
-
-[node name="SM_LittleRock_41" parent="rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(2.76501, -8.22485, -1.55266, 3.18524, 2.54612, -7.81509, 7.74036, 1.89032, 3.77064, 37.8416, -122.245, -12.2438)
-
-[node name="SM_LittleRock_49" parent="rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(7.9328, 1.24166, 3.63774, 3.60767, 0.473879, -8.02896, -1.3265, 8.71424, -0.0817176, 22.8373, -122.245, -14.7007)
-
-
-[node name="SM_LittleRock_42" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(-8.77106, -0.879024, 0, 0.879024, -8.77106, 0, 0, 0, 8.815, 13.6694, -118.954, -12.713)
-
-[node name="SM_LittleRock_43" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(-8.77106, -0.879024, 0, 0.879024, -8.77106, 0, 0, 0, 8.815, 38.7578, -113.773, -8.62885)
-
-[node name="SM_LittleRock_44" parent="Level/rocks" instance=ExtResource("2_mkl5d")]
-transform = Transform3D(-6.28299, 1.51493, -5.99444, -6.1829, -1.53946, 6.09147, -5.25415e-07, 8.5463, 2.15985, 4.57298, -115.281, -27.381)
-
-[node name="SM_LittleRock_45" parent="Level/rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(5.5403, -2.96489, 6.18213, 5.54172, -2.74364, -6.2822, 4.03716, 7.83493, 0.139534, -13.777, -122.381, -8.14404)
-
-[node name="SM_LittleRock_46" parent="Level/rocks" instance=ExtResource("5_uokvx")]
-transform = Transform3D(-6.28299, 6.1829, 0, -6.1829, -6.28299, 0, 0, 0, 8.815, -6.35944, -112.756, -8.62885)
-
-[node name="SM_LittleRock_29" parent="Level/rocks" instance=ExtResource("7_lay7s")]
-transform = Transform3D(-5.95916, 1.44336, -3.20804, -3.51778, -2.44507, 5.43445, -5.72235e-09, 6.31068, 2.83931, 5.734, -72.2419, -22.3463)
-
-[node name="SM_LittleRock_30" parent="Level/rocks" instance=ExtResource("6_nycnj")]
-transform = Transform3D(7.35956, -2.49193, 0, 2.49193, 7.35956, 0, 0, 0, 7.77, -2.03567, -94.6912, -15.1388)
-
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5067, -294.085, 0.691148)
-
-mesh = SubResource("SphereMesh_mjxo8")
-skeleton = NodePath("../..")
 
 [node name="eyes" type="Node3D" parent="Level"]
 
@@ -436,6 +274,160 @@ transform = Transform3D(1.17121, -0.0642956, 1.03603, -0.323708, 1.46148, 0.4566
 
 [node name="rockeyelids2" parent="Level/eyelids" instance=ExtResource("9_8idos")]
 transform = Transform3D(-0.622064, 0.377023, 1.07745, 0.188511, 1.24413, -0.326511, -1.12583, 1.93715e-08, -0.65, 8.38724, -99.8801, 4.19437)
+
+[node name="rocks" type="Node3D" parent="."]
+
+[node name="SM_LittleRock_01" parent="rocks" instance=ExtResource("2_mkl5d")]
+transform = Transform3D(5.845, 0, 0, 0, 5.845, 0, 0, 0, 5.845, -4.07042, -4.87269, -7.45249)
+
+[node name="SM_LittleRock_48" parent="rocks" instance=ExtResource("2_mkl5d")]
+transform = Transform3D(10.1152, 2.2109, -8.74832, -9.02338, 2.47841, -9.80683, 0, 13.1418, 3.32124, 28.4547, 8.98002, -27.381)
+
+[node name="SM_LittleRock_15" parent="rocks" instance=ExtResource("7_lay7s")]
+transform = Transform3D(6.958, -1.05934, 1.63237, 1.94598, 3.78777, -5.83666, 0, 6.06063, 3.93311, -19.4862, -51.3862, -16.9584)
+
+[node name="SM_LittleRock_41" parent="rocks" instance=ExtResource("4_dkbql")]
+transform = Transform3D(2.76501, -8.22485, -1.55266, 3.18524, 2.54612, -7.81509, 7.74036, 1.89032, 3.77064, 37.8416, -122.245, -12.2438)
+
+[node name="SM_LittleRock_49" parent="rocks" instance=ExtResource("4_dkbql")]
+transform = Transform3D(7.9328, 1.24166, 3.63774, 3.60767, 0.473879, -8.02896, -1.3265, 8.71424, -0.0817176, 22.8373, -122.245, -14.7007)
+
+[node name="Level_rocks#SM_LittleRock_02" parent="." instance=ExtResource("3_sl5a2")]
+transform = Transform3D(2.15689, 0, -0.349378, 0, 2.185, 0, 0.349378, 0, 2.15689, 2.09254, -4.47076, -2.08683)
+
+[node name="Level_rocks#SM_LittleRock_03" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(0.596071, 0.798234, -0.0867301, 0, 0.108017, 0.994149, 0.802932, -0.592583, 0.0643856, 0.169951, -2.48815, -4.61003)
+
+[node name="Level_rocks#SM_LittleRock_04" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(2.94062, 0, 3.74304, 0, 4.76, 0, -3.74304, 0, 2.94062, 2.05119, -13.8486, -10.2141)
+
+[node name="Level_rocks#SM_LittleRock_05" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(-3.3646, 1.7337, 1.471e-09, -0.0274431, -0.0532589, 3.78453, 1.73348, 3.36418, 0.0599136, -4.96452, -9.98075, -8.14404)
+
+[node name="Level_rocks#SM_LittleRock_06" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(5.57, 0, 0, 0, 4.87253, -2.69877, 0, 2.69877, 4.87253, -12.2957, -15.2313, -9.7399)
+
+[node name="Level_rocks#SM_LittleRock_07" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(5.615, 0, 0, 0, 5.615, 0, 0, 0, 5.615, 6.07231, -12.1824, -12.713)
+
+[node name="Level_rocks#SM_LittleRock_08" parent="." instance=ExtResource("7_lay7s")]
+transform = Transform3D(-6.77258, 0.582956, -1.29568, -1.42079, -2.77882, 6.17624, 0, 6.31068, 2.83931, 6.62879, -20.5374, -22.3463)
+
+[node name="Level_rocks#SM_LittleRock_10" parent="." instance=ExtResource("7_lay7s")]
+transform = Transform3D(6.958, -1.05934, 1.63237, 1.94598, 3.78777, -5.83666, 0, 6.06063, 3.93311, 19.7922, -18.7534, -16.2778)
+
+[node name="Level_rocks#SM_LittleRock_09" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(7.77, 0, 0, 0, 7.77, 0, 0, 0, 7.77, -7.93023, -39.3091, -15.1388)
+
+[node name="Level_rocks#SM_LittleRock_11" parent="." instance=ExtResource("2_mkl5d")]
+transform = Transform3D(13.555, 0, 0, 0, 3.32124, -13.1418, 0, 13.1418, 3.32124, 31.3818, -11.5098, -27.381)
+
+[node name="Level_rocks#SM_LittleRock_16" parent="." instance=ExtResource("2_mkl5d")]
+transform = Transform3D(13.555, 0, 0, 0, 3.32124, -13.1418, 0, 13.1418, 3.32124, -2.60999, -50.5172, -27.381)
+
+[node name="Level_rocks#SM_LittleRock_12" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(4.015, 0, 0, 0, 4.015, 0, 0, 0, 4.015, -17.0024, -11.6382, -3.65488)
+
+[node name="Level_rocks#SM_LittleRock_35" parent="." instance=ExtResource("2_mkl5d")]
+transform = Transform3D(5.845, 0, 0, 0, 5.845, 0, 0, 0, 5.845, -18.8017, -4.81358, -7.48022)
+
+[node name="Level_rocks#SM_LittleRock_36" parent="." instance=ExtResource("3_sl5a2")]
+transform = Transform3D(2.15689, 0, -0.349378, 0, 2.185, 0, 0.349378, 0, 2.15689, -12.5228, -4.47076, -2.08683)
+
+[node name="Level_rocks#SM_LittleRock_37" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(5.57, 0, 0, 0, 4.87253, -2.69877, 0, 2.69877, 4.87253, -26.911, -15.2313, -9.7399)
+
+[node name="Level_rocks#SM_LittleRock_38" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(7.77, 0, 0, 0, 7.77, 0, 0, 0, 7.77, -22.5455, -39.3091, -15.1388)
+
+[node name="Level_rocks#SM_LittleRock_39" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(4.015, 0, 0, 0, 4.015, 0, 0, 0, 4.015, -31.6177, -11.6382, -3.65488)
+
+[node name="Level_rocks#SM_LittleRock_17" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(-7.22699, 3.7239, 6.82479e-09, -0.0589465, -0.114398, 8.12898, 3.72344, 7.22609, 0.128692, 15.4487, -58.3278, -11.372)
+
+[node name="Level_rocks#SM_LittleRock_18" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(8.13, 0, 0, 0, 8.13, 0, 0, 0, 8.13, 26.4855, -60.5295, -12.713)
+
+[node name="Level_rocks#SM_LittleRock_19" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(8.13, 0, 0, 0, 8.13, 0, 0, 0, 8.13, 3.41082, -59.9853, -12.5163)
+
+[node name="Level_rocks#SM_LittleRock_13" parent="." instance=ExtResource("7_lay7s")]
+transform = Transform3D(-6.77258, 0.582956, -1.29568, -1.42079, -2.77882, 6.17624, 0, 6.31068, 2.83931, 26.0805, -30.3742, -22.3463)
+
+[node name="Level_rocks#SM_LittleRock_14" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(7.77, 0, 0, 0, 7.77, 0, 0, 0, 7.77, 11.5215, -49.1458, -15.1388)
+
+[node name="Level_rocks#SM_LittleRock_20" parent="." instance=ExtResource("3_sl5a2")]
+transform = Transform3D(2.04295, -0.700756, -0.330923, 0.69174, 2.06958, -0.11205, 0.349378, 4.00483e-09, 2.15689, -25.2944, -55.4, -2.08683)
+
+[node name="Level_rocks#SM_LittleRock_21" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(0.564584, 0.721426, -0.400984, 0.191167, 0.358314, 0.913819, 0.802932, -0.592583, 0.0643856, -27.7513, -54.1387, -4.61003)
+
+[node name="Level_rocks#SM_LittleRock_22" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(2.78529, -1.52659, 3.54532, 0.943093, 4.50856, 1.20044, -3.74304, -9.63549e-09, 2.94062, -22.326, -64.2957, -10.2141)
+
+[node name="Level_rocks#SM_LittleRock_23" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(-3.17807, 1.6592, -1.21374, -1.10506, 0.505573, 3.58461, 1.73348, 3.36418, 0.0599136, -30.2115, -62.8822, -8.14404)
+
+[node name="Level_rocks#SM_LittleRock_24" parent="." instance=ExtResource("7_lay7s")]
+transform = Transform3D(2.99243, 2.56011, -5.69013, -6.23953, 1.22781, -2.72894, 9.91158e-08, 6.31068, 2.83931, -15.845, -69.1632, -22.3463)
+
+[node name="Level_rocks#SM_LittleRock_25" parent="." instance=ExtResource("2_mkl5d")]
+transform = Transform3D(12.839, -1.06516, 4.21474, 4.34725, 3.1458, -12.4476, -7.19394e-08, 13.1418, 3.32124, -14.9809, -100.522, -27.381)
+
+[node name="Level_rocks#SM_LittleRock_26" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(-7.72462, -1.25134, -2.20485, -2.37362, 1.08595, 7.69958, -0.890581, 7.95938, -1.39714, 4.62887, -102.129, -10.5933)
+
+[node name="Level_rocks#SM_LittleRock_27" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(7.70055, -2.60739, 0, 2.60739, 7.70055, 0, 0, 0, 8.13, 15.7888, -100.674, -12.713)
+
+[node name="Level_rocks#SM_LittleRock_28" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(7.70055, -2.60739, 0, 2.60739, 7.70055, 0, 0, 0, 8.13, -6.24154, -107.559, -8.62885)
+
+[node name="Level_rocks#SM_LittleRock_31" parent="." instance=ExtResource("2_mkl5d")]
+transform = Transform3D(4.86452, -3.1, 12.2664, 12.6521, 1.1919, -4.71624, -1.67597e-07, 13.1418, 3.32124, 25.5897, -100.256, -27.381)
+
+[node name="Level_rocks#SM_LittleRock_32" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(-2.53855, 1.44318, -7.58748, -6.76673, 3.43479, 2.91727, 3.72344, 7.22609, 0.128692, 39.3608, -86.2037, -8.14404)
+
+[node name="Level_rocks#SM_LittleRock_33" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(2.91764, -7.58843, 0, 7.58843, 2.91764, 0, 0, 0, 8.13, 45.3767, -76.6921, -12.713)
+
+[node name="Level_rocks#SM_LittleRock_34" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(2.91764, -7.58843, 0, 7.58843, 2.91764, 0, 0, 0, 8.13, 36.5879, -98.0345, -8.62885)
+
+[node name="Level_rocks#SM_LittleRock_47" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(6.30057, 5.13807, 0, -5.13807, 6.30057, 0, 0, 0, 8.13, 36.5879, -109.215, -8.62885)
+
+[node name="Level_rocks#SM_LittleRock_40" parent="." instance=ExtResource("2_mkl5d")]
+transform = Transform3D(-8.77106, -0.215379, 0.852231, 0.879025, -2.14908, 8.5037, 0, 8.5463, 2.15985, 41.6214, -131.818, -27.381)
+
+[node name="Level_rocks#SM_LittleRock_42" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(-8.77106, -0.879024, 0, 0.879024, -8.77106, 0, 0, 0, 8.815, 13.6694, -118.954, -12.713)
+
+[node name="Level_rocks#SM_LittleRock_43" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(-8.77106, -0.879024, 0, 0.879024, -8.77106, 0, 0, 0, 8.815, 38.7578, -113.773, -8.62885)
+
+[node name="Level_rocks#SM_LittleRock_44" parent="." instance=ExtResource("2_mkl5d")]
+transform = Transform3D(-6.28299, 1.51493, -5.99444, -6.1829, -1.53946, 6.09147, -5.25415e-07, 8.5463, 2.15985, 4.57298, -115.281, -27.381)
+
+[node name="Level_rocks#SM_LittleRock_45" parent="." instance=ExtResource("4_dkbql")]
+transform = Transform3D(5.5403, -2.96489, 6.18213, 5.54172, -2.74364, -6.2822, 4.03716, 7.83493, 0.139534, -13.777, -122.381, -8.14404)
+
+[node name="Level_rocks#SM_LittleRock_46" parent="." instance=ExtResource("5_uokvx")]
+transform = Transform3D(-6.28299, 6.1829, 0, -6.1829, -6.28299, 0, 0, 0, 8.815, -6.35944, -112.756, -8.62885)
+
+[node name="Level_rocks#SM_LittleRock_29" parent="." instance=ExtResource("7_lay7s")]
+transform = Transform3D(-5.95916, 1.44336, -3.20804, -3.51778, -2.44507, 5.43445, -5.72235e-09, 6.31068, 2.83931, 5.734, -72.2419, -22.3463)
+
+[node name="Level_rocks#SM_LittleRock_30" parent="." instance=ExtResource("6_nycnj")]
+transform = Transform3D(7.35956, -2.49193, 0, 2.49193, 7.35956, 0, 0, 0, 7.77, -2.03567, -94.6912, -15.1388)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5067, -294.085, 0.691148)
+mesh = SubResource("SphereMesh_mjxo8")
+skeleton = NodePath("../..")
 
 [node name="Seafloor_Redone" type="Node3D" parent="."]
 transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 3.50105, 37.9429, -2.12281)
