@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm04nw5vtbd23"]
+[gd_scene load_steps=9 format=3 uid="uid://bm04nw5vtbd23"]
 
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_5qxhj"]
 [ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="2_3m072"]
 [ext_resource type="Script" path="res://Scripts/particles.gd" id="2_7jawa"]
 [ext_resource type="PackedScene" uid="uid://dd13j1y3vodxx" path="res://Audio/FMOD_Test.tscn" id="2_sjdab"]
+[ext_resource type="AudioStream" uid="uid://d0b1fnyqoiw5r" path="res://Audio/Music/Dropping-Down.ogg" id="5_vlrxc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ft57"]
 size = Vector3(0.1, 10, 10)
@@ -25,12 +26,13 @@ player_influence = 0.2
 
 [node name="BoundingPlayerBox" type="Node3D" parent="."]
 
-[node name="Player" parent="BoundingPlayerBox" instance=ExtResource("2_3m072")]
+[node name="Player" parent="BoundingPlayerBox" groups=["Player"] instance=ExtResource("2_3m072")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = true
 axis_lock_angular_z = true
+safe_margin = 0.01
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BoundingPlayerBox"]
 
@@ -70,3 +72,8 @@ shape = SubResource("ConvexPolygonShape3D_r87kx")
 transform = Transform3D(0.707107, -0.183013, 0.683013, 0, 0.965926, 0.258819, -0.707107, -0.183013, 0.683013, 0, 0, 0)
 light_color = Color(0, 0, 1, 1)
 light_energy = 0.3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vlrxc")
+volume_db = -8.432
+autoplay = true
