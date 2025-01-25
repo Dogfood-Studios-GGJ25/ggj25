@@ -10,23 +10,40 @@
 ## Vision
 A slow decent into deep ocean accompanied by ...
 
+### UI
+- diegetic, no explicit UI
+
 ## MDA
 ### Fear
 - Environment progressively getting darker
 - Sound FX suggesting large animals hunting for you
 - Music emphasising the ambiance
 - Never hit by big fish, but the wake disturbs your bubble
+	- Big eyes ogling you at the end
+- Slow decent into the depth
 
 ### Challenge
 - Air bubble shrinking over time
 - Saving air to prevent the bubble shrinkage
+	- holding breath, leads to hallucination and diminished vision by vignette
 - Fish attacking
 - Avoid Fish
+- loud flashlight to scare enemies
+	- loud flashlight attracts enemies
+	- enemies get scared away when in the light
 
 ## Controls
 - arrow-keys, y-axis inverted
+- y-axis is going slower or faster down, never up
 
-## Enemies
+## Obstacles
 - Small fish, just nibble, don't really hurt you
 - Big Fish, megalodon coming very close, disturbing you with their wake
-- Sea horse - great white combo (great white size, teeth and red mouth) actually eats you
+- Sea horse - great white combo (great white size, teeth and red mouth) actually bites you
+- You encounter rocks now and then
+	- sometimes they have eyes
+
+##Items
+- air bubbles
+	- float up, very little time to reach
+	- gives air
