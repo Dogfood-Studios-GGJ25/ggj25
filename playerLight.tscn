@@ -1,12 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7vlwpvuqj7a2"]
+[gd_scene load_steps=5 format=3 uid="uid://c7vlwpvuqj7a2"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_o0n0e"]
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_q22rq"]
-[ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Flashlight.tscn" id="3_k0c2f"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3cu1o"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ak6rt"]
+[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="3_g0sld"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yugyq"]
 
@@ -22,17 +17,6 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 visible = false
 shadow_enabled = true
 
-[node name="Playerplaceholder" type="CharacterBody3D" parent="."]
-script = ExtResource("1_o0n0e")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Playerplaceholder"]
-shape = SubResource("CapsuleShape3D_3cu1o")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Playerplaceholder"]
-mesh = SubResource("CapsuleMesh_ak6rt")
-
-[node name="SpotLight3D" parent="Playerplaceholder" instance=ExtResource("3_k0c2f")]
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49012e-05, -0.00217056, 2.19498)
 
@@ -41,3 +25,5 @@ transform = Transform3D(0.171, 0, 0, 0, 0.1, 0, 0, 0, 0.5, 1.56569, 0.0370393, 0
 gi_mode = 2
 mesh = SubResource("BoxMesh_yugyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_v3yyc")
+
+[node name="Player" parent="." instance=ExtResource("3_g0sld")]

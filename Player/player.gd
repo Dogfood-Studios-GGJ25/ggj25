@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@onready var spotlight = $SpringArm3D
+
 const SPEED = 1.0
 const MAX_SPEED = 3.0
 const ACCELERATION_TIME = 0.8
@@ -9,9 +11,24 @@ const TERMINAL_VELOCITY = -0.5
 var current_speed_x: float = 0.0
 var current_speed_y: float = 0.0
 var gravity_velocity: float = 0.0 
+var camera
+
+
+func _ready():
+	camera = get_tree().get_first_node_in_group("Camera3D")
+
 
 func _physics_process(delta: float) -> void:
+	
+	# Spotlight looking at mouse position
+	var mouse_pos = get_viewport().get_mouse_position()
+	var ray_origin = camera.project_ray_origin(mouse_pos)
+	var ray_direction = camera.project_ray_normal(mouse_pos)
+	var t = -ray_origin.z / ray_direction.z 
+	var world_pos = ray_origin + ray_direction * t
+	spotlight.look_at(world_pos)
 
+	# 
 	if Input.is_action_just_pressed("debug_1"):
 		on_interact("quick_time")
 	
@@ -37,10 +54,23 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func on_interact(state):
 	match state:
 		"quick_time":
 			print("QUICK TIME START")
 		"Jumpscare":
 			print("JUMPSCARE START")
-	
+
+
+func _on_spot_light_3d_object_entered_light(object):
+	if object == self:  # Only respond if we're the object that entered
+		print("Entered light!")
+		# Add your response code here
+
+
+
+func _on_spot_light_3d_object_exited_light(object):
+	if object == self:  # Only respond if we're the object that exited
+		print("Exited light!")
+		# Add your response code here
