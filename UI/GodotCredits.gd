@@ -36,29 +36,38 @@ var credits = [
 		"Don't Look Back"
 	],[
 		"Programming",
-		"Programmer Name",
-		"Programmer Name 2"
+		"Dennis Kirsch",
+		"Erwin Bell",
+		"Ruben Steins",
+		"Louis van Zijst"
 	],[
 		"Art",
-		"Artist Name"
+		"Laura van Helden",
+		"Melissa Issaoun"
 	],[
 		"Music",
-		"Musician Name"
+		"Ruben Steins"
 	],[
 		"Sound Effects",
-		"SFX Name"
+		"Louis van Zijst"
+	],[
+		"Voice Acting",
+		"Melissa Issaoun"
 	],[
 		"Testers",
-		"Name 1",
-		"Name 2",
-		"Name 3"
+		"Huey",
+		"Duey",
+		"Luey"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
 		"https://godotengine.org/license",
+		"",		
+		"Fmod Godot Extenstion by utopia-rise",
+		"https://github.com/utopia-rise/fmod-gdextension",
 		"",
-		"Art created with My Favourite Art Program",
-		"https://myfavouriteartprogram.com"
+		"Credits Screen by MiDe",
+		"https://godotengine.org/asset-library/asset/2411"
 	],[
 		"Special thanks",
 		"My parents",
