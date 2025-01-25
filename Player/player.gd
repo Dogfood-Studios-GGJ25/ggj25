@@ -19,11 +19,13 @@ var camera
 
 var spotlight_state: bool = false
 
-
-
 func _ready():
 	camera = get_tree().get_first_node_in_group("Camera3D")
 	update_o2_label()
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("quit"):
+		get_tree().quit()
 
 func _physics_process(delta: float) -> void:
 # Spotlight looking at mouse position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://jv1lxee8i1an"]
+[gd_scene load_steps=16 format=3 uid="uid://jv1lxee8i1an"]
 
 [ext_resource type="Script" path="res://LevelScripts/leveldesign.gd" id="1_1gpiy"]
 [ext_resource type="Script" path="res://game_ender.gd" id="1_836wd"]
@@ -6,17 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_ucrc6"]
 [ext_resource type="Script" path="res://Scripts/particles.gd" id="2_75p1g"]
 [ext_resource type="PackedScene" uid="uid://cc20ff53teico" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
-[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="3_pgecy"]
 [ext_resource type="PackedScene" uid="uid://cwhrr5vxmekiu" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]
 [ext_resource type="PackedScene" uid="uid://5speyvvxxkba" path="res://Meshes/preparedrock3.tscn" id="4_dkbql"]
+[ext_resource type="PackedScene" uid="uid://cnyqv7dko6y5q" path="res://Player/bounding_player_box.tscn" id="4_ontjx"]
 [ext_resource type="PackedScene" uid="uid://72hykw7r04vr" path="res://Meshes/preparedrock4.tscn" id="5_uokvx"]
 [ext_resource type="PackedScene" uid="uid://bvjqu1klod5fi" path="res://Meshes/preparedrock5.tscn" id="6_nycnj"]
 [ext_resource type="PackedScene" uid="uid://ysw2rs6sq3qg" path="res://Meshes/preparedrock6.tscn" id="7_lay7s"]
 [ext_resource type="PackedScene" uid="uid://dfmyh0eg0tb2y" path="res://eye.tscn" id="8_d63hi"]
 [ext_resource type="PackedScene" uid="uid://d1kv872rstbdn" path="res://rockeyelids.tscn" id="9_8idos"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y1wfr"]
-size = Vector3(0.1, 10, 10)
 
 [sub_resource type="SphereMesh" id="SphereMesh_mjxo8"]
 
@@ -31,37 +28,7 @@ particle_size = Vector2(0.001, 0.001)
 particle_color = Color(1, 1, 1, 1)
 player_influence = 0.2
 
-[node name="BoundingPlayerBox" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31, 0)
-
-[node name="Player" parent="BoundingPlayerBox" instance=ExtResource("3_pgecy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = true
-axis_lock_angular_z = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="BoundingPlayerBox"]
-
-[node name="RightWall" type="CollisionShape3D" parent="BoundingPlayerBox/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-shape = SubResource("BoxShape3D_y1wfr")
-
-[node name="LeftWall" type="CollisionShape3D" parent="BoundingPlayerBox/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-shape = SubResource("BoxShape3D_y1wfr")
-
-[node name="BottomWall" type="CollisionShape3D" parent="BoundingPlayerBox/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, -3, 0)
-shape = SubResource("BoxShape3D_y1wfr")
-
-[node name="TopWall" type="CollisionShape3D" parent="BoundingPlayerBox/StaticBody3D"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, 3, 0)
-shape = SubResource("BoxShape3D_y1wfr")
-
-[node name="Camera" type="Camera3D" parent="BoundingPlayerBox" groups=["Camera3D"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.79815)
-fov = 70.0
+[node name="BoundingPlayerBox" parent="." instance=ExtResource("4_ontjx")]
 
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
