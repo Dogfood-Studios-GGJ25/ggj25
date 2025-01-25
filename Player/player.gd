@@ -9,7 +9,6 @@ extends CharacterBody3D
 @export var flashlight_level : int = 100
 
 signal player_death
-signal oxygen_changed
 
 const SPEED = 1.0
 const MAX_SPEED = 3.0
@@ -87,6 +86,7 @@ func interact_with_bubbles() -> void:
 			var o2_gained = collider.pop_for_oxygen()
 			oxygen_level += o2_gained
 			update_o2_label()
+			SignalBus.Oxygen_Changed.emit(oxygen_level)
 
 func on_interact(state):
 	match state:
