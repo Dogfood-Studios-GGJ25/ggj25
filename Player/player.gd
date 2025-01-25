@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
-@onready var spotlight = $SpringArm3D
+@onready var spring_arm = $SpringArm3D
+@onready var spotlight = $SpringArm3D/SpotLight3D
 
 const SPEED = 1.0
 const MAX_SPEED = 3.0
@@ -13,25 +14,32 @@ var current_speed_y: float = 0.0
 var gravity_velocity: float = 0.0 
 var camera
 
+var spotlight_state: bool = false
+
 
 func _ready():
 	camera = get_tree().get_first_node_in_group("Camera3D")
 
 
 func _physics_process(delta: float) -> void:
-	
-	# Spotlight looking at mouse position
+# Spotlight looking at mouse position
 	var mouse_pos = get_viewport().get_mouse_position()
 	var ray_origin = camera.project_ray_origin(mouse_pos)
 	var ray_direction = camera.project_ray_normal(mouse_pos)
 	var t = -ray_origin.z / ray_direction.z 
 	var world_pos = ray_origin + ray_direction * t
-	spotlight.look_at(world_pos)
+	spring_arm.look_at(world_pos)
 
-	# 
-	if Input.is_action_just_pressed("debug_1"):
-		on_interact("quick_time")
+# actions
+	if Input.is_action_just_pressed("mouse_left_click"):
+		if spotlight.visible:
+			spotlight_state = false
+			spotlight.visible = false
+		else:
+			spotlight_state = true
+			spotlight.visible = true
 	
+# directional input
 	var input_dir := Input.get_vector("player_left", "player_right","player_up", "player_down")
 	var direction := (transform.basis * Vector3(input_dir.x, input_dir.y, 0)).normalized()
 	
@@ -63,14 +71,5 @@ func on_interact(state):
 			print("JUMPSCARE START")
 
 
-func _on_spot_light_3d_object_entered_light(object):
-	if object == self:  # Only respond if we're the object that entered
-		print("Entered light!")
-		# Add your response code here
-
-
-
-func _on_spot_light_3d_object_exited_light(object):
-	if object == self:  # Only respond if we're the object that exited
-		print("Exited light!")
-		# Add your response code here
+func _on_spot_light_3d_object_detected(object: Variant) -> void:
+	print("Detected object in spotlight:", object)

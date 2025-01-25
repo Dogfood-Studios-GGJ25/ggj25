@@ -1,16 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds2x5oq5ienrx"]
+[gd_scene load_steps=9 format=3 uid="uid://ds2x5oq5ienrx"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_iijgt"]
 [ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Flashlight.tscn" id="2_pb1ki"]
+[ext_resource type="Material" uid="uid://wnltco2plnsx" path="res://Assets/Bubble_effect/bubble.tres" id="2_y3e1d"]
+[ext_resource type="Shader" path="res://Assets/Bubble_effect/bubble.gdshader" id="2_y6wap"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ha2lk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_681b3"]
-transparency = 1
-albedo_color = Color(0.772549, 0.772549, 0.772549, 0.27451)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0iwr"]
+shader = ExtResource("2_y6wap")
+shader_parameter/time = null
+shader_parameter/scale = Vector2(10, 10)
 
 [sub_resource type="SphereMesh" id="SphereMesh_uj22g"]
-material = SubResource("StandardMaterial3D_681b3")
+material = SubResource("ShaderMaterial_m0iwr")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6r5ev"]
 
@@ -24,6 +27,7 @@ script = ExtResource("1_iijgt")
 shape = SubResource("SphereShape3D_ha2lk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_y3e1d")
 mesh = SubResource("SphereMesh_uj22g")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
@@ -37,3 +41,6 @@ spring_length = 0.0
 
 [node name="SpotLight3D" parent="SpringArm3D" instance=ExtResource("2_pb1ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61684e-08, 0, -0.36989)
+visible = false
+
+[connection signal="object_detected" from="SpringArm3D/SpotLight3D" to="." method="_on_spot_light_3d_object_detected"]
