@@ -14,8 +14,7 @@ var audio_dict = {
 	"beintouch": preload("res://Intro/audio/be in touch.mp3"),
 	"boom": preload("res://Intro/audio/boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3")}
 
-
-#@onready var next_scene = preload("res://path_to_your_next_scene.tscn")
+@onready var next_scene = preload("res://Scenes/sea.tscn")
 
 func _ready():
 	cover.visible = false
@@ -42,9 +41,9 @@ func _on_dialogic_signal(argument: String):
 			await get_tree().create_timer(5.0).timeout
 			
 			# Add scene transition here
-			#change_scene()
+			change_scene()
 	else:
 		print("Error: No audio file found for", argument)
 
-#func change_scene():
-	#get_tree().change_scene_to_packed(next_scene)
+func change_scene():
+	get_tree().change_scene_to_packed(next_scene)

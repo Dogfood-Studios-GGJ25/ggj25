@@ -32,6 +32,7 @@ config/name="GGJ25_Dogfood_Studios"
 run/main_scene="res://UI/StartScreen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3
 
 [autoload]
 
@@ -48,6 +49,10 @@ directories/dch_directory={
 directories/dtl_directory={
 "introtimeline": "res://Intro/Timelines/introtimeline.dtl"
 }
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
