@@ -16,3 +16,6 @@ mono_crash.*.json
 
 # Jetbrain Rider Stuff
 .idea/
+
+# Stupid Mac stuff
+**/.DS_Store
