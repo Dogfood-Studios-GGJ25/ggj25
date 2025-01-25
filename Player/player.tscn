@@ -81,6 +81,7 @@ billboard = 1
 text = "100"
 
 [node name="OxygenTimer" type="Timer" parent="OxyLevel"]
+wait_time = 0.5
 autostart = true
 
 [connection signal="object_detected" from="SpringArm3D/SpotLight3D" to="." method="_on_spot_light_3d_object_detected"]

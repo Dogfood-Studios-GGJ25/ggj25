@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var spring_arm = $SpringArm3D
 @onready var spotlight = $SpringArm3D/SpotLight3D
 @onready var oxy_level: Label3D = $OxyLevel
+@onready var lighting: DirectionalLight3D = $"../DirectionalLight3D"
 
 @export var oxygen_level : int = 100
 @export var flashlight_level : int = 100
