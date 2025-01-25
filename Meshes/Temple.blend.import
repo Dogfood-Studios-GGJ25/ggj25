@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://by0jvnocf7uva"
-path="res://.godot/imported/sandbank.blend-d8d70bc25a7010f83a691763ed7524f6.scn"
+uid="uid://bsokd1yf7r284"
+path="res://.godot/imported/Temple.blend-4c5789e90a922efba0d33b8ae3ea2514.scn"
 
 [deps]
 
-source_file="res://Meshes/sandbank.blend"
-dest_files=["res://.godot/imported/sandbank.blend-d8d70bc25a7010f83a691763ed7524f6.scn"]
+source_file="res://Meshes/Temple.blend"
+dest_files=["res://.godot/imported/Temple.blend-4c5789e90a922efba0d33b8ae3ea2514.scn"]
 
 [params]
 

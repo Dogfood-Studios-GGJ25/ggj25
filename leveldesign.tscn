@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://jv1lxee8i1an"]
+[gd_scene load_steps=30 format=4 uid="uid://jv1lxee8i1an"]
 
 [ext_resource type="Script" path="res://game_ender.gd" id="1_836wd"]
-[ext_resource type="PackedScene" uid="uid://tvy3kvtneni8" path="res://divinglevel.tscn" id="1_dcoo6"]
 [ext_resource type="PackedScene" uid="uid://cc20ff53teico" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
 [ext_resource type="PackedScene" uid="uid://cwhrr5vxmekiu" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]
 [ext_resource type="PackedScene" uid="uid://5speyvvxxkba" path="res://Meshes/preparedrock3.tscn" id="4_dkbql"]
@@ -10,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://ysw2rs6sq3qg" path="res://Meshes/preparedrock6.tscn" id="7_lay7s"]
 [ext_resource type="PackedScene" uid="uid://dfmyh0eg0tb2y" path="res://eye.tscn" id="8_d63hi"]
 [ext_resource type="PackedScene" uid="uid://d1kv872rstbdn" path="res://rockeyelids.tscn" id="9_8idos"]
-[ext_resource type="Material" uid="uid://bkcor375bi8nr" path="res://Meshes/sandbank.tres" id="11_uns7d"]
+[ext_resource type="PackedScene" uid="uid://07jewl4tvikr" path="res://Meshes/temple_2.tscn" id="11_ky80y"]
+[ext_resource type="Material" uid="uid://ck18nbes0vtha" path="res://Meshes/sandbank.tres" id="11_uns7d"]
+[ext_resource type="PackedScene" uid="uid://6v4pue7yj1ce" path="res://Scenes/Squid/Squid.tscn" id="12_wrj87"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_mjxo8"]
 
@@ -167,10 +168,6 @@ data = PackedVector3Array(-0.0015, 5.017, -0.0276, 0.0404, 4.4845, -0.0277, 0.01
 [node name="GameEnder" type="Node" parent="."]
 script = ExtResource("1_836wd")
 
-[node name="divinglevel" parent="." instance=ExtResource("1_dcoo6")]
-transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 3.50105, 37.9429, -2.12281)
-visible = false
-
 [node name="rocks" type="Node3D" parent="."]
 
 [node name="SM_LittleRock_01" parent="rocks" instance=ExtResource("2_mkl5d")]
@@ -294,7 +291,10 @@ transform = Transform3D(6.30057, 5.13807, 0, -5.13807, 6.30057, 0, 0, 0, 8.13, 3
 transform = Transform3D(-8.77106, -0.215379, 0.852231, 0.879025, -2.14908, 8.5037, 0, 8.5463, 2.15985, 41.6214, -131.818, -27.381)
 
 [node name="SM_LittleRock_41" parent="rocks" instance=ExtResource("4_dkbql")]
-transform = Transform3D(6.64702, -3.5071, 4.60669, 4.15002, -2.00459, -7.51419, 4.03716, 7.83493, 0.139534, 24.4316, -122.245, -8.14404)
+transform = Transform3D(2.76501, -8.22485, -1.55266, 3.18524, 2.54612, -7.81509, 7.74036, 1.89032, 3.77064, 37.8416, -122.245, -12.2438)
+
+[node name="SM_LittleRock_49" parent="rocks" instance=ExtResource("4_dkbql")]
+transform = Transform3D(7.9328, 1.24166, 3.63774, 3.60767, 0.473879, -8.02896, -1.3265, 8.71424, -0.0817176, 22.8373, -122.245, -14.7007)
 
 [node name="SM_LittleRock_42" parent="rocks" instance=ExtResource("6_nycnj")]
 transform = Transform3D(-8.77106, -0.879024, 0, 0.879024, -8.77106, 0, 0, 0, 8.815, 13.6694, -118.954, -12.713)
@@ -318,7 +318,7 @@ transform = Transform3D(-5.95916, 1.44336, -3.20804, -3.51778, -2.44507, 5.43445
 transform = Transform3D(7.35956, -2.49193, 0, 2.49193, 7.35956, 0, 0, 0, 7.77, -2.03567, -94.6912, -15.1388)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.777, -107.668, 0.691148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5067, -294.085, 0.691148)
 mesh = SubResource("SphereMesh_mjxo8")
 
 [node name="eyes" type="Node3D" parent="."]
@@ -620,3 +620,40 @@ surface_material_override/0 = ExtResource("11_uns7d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Seafloor_Redone/Sand/rock_013/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_o2fsa")
+
+[node name="Squid Path" parent="Seafloor_Redone" instance=ExtResource("12_wrj87")]
+transform = Transform3D(15.3846, 0, 0, 0, 15.3846, 0, 0, 0, 15.3846, 5795.35, -1241.24, -2096.81)
+
+[node name="Abyss" type="Node3D" parent="."]
+
+[node name="Background" type="Node3D" parent="Abyss"]
+
+[node name="SM_LittleRock_1" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(0.561436, -1.92412, 8.5841, 1.25308, -8.49637, -1.9864, 8.7074, 1.34677, -0.26762, 49.1218, -147.676, -12.2438)
+
+[node name="SM_LittleRock_5" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(0.314916, -0.286427, 8.80471, 3.3169, -8.15812, -0.384024, 8.16108, 3.32675, -0.18367, 20.8825, -142.387, -20.7303)
+
+[node name="SM_LittleRock_9" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(4.30143, 4.04779, 137.838, -11.6144, -94.6417, 6.05297, 197.769, -5.64605, -2.64241, -153.527, -322.6, -20.7303)
+
+[node name="SM_LittleRock_6" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(-2.89772, 0.92891, -8.27312, -2.1756, -8.54004, -0.196859, -8.03581, 1.97715, 3.03659, 20.8825, -148.574, -36.9789)
+
+[node name="SM_LittleRock_7" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(0.503401, -1.63746, -8.64693, -2.31124, -8.38166, 1.45266, -8.4917, 2.18422, -0.907989, 52.4015, -148.574, -34.0839)
+
+[node name="SM_LittleRock_8" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(-4.06155, 2.76461, -7.31881, -3.77889, -7.9138, -0.892277, -6.85041, 2.72636, 4.83147, -7.32887, -152.738, -22.8046)
+
+[node name="SM_LittleRock_4" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(1.05301, -5.44683, 6.85036, 0.881245, -6.79871, -5.54122, 8.7074, 1.34677, -0.26762, 89.2205, -164.899, -9.51092)
+
+[node name="SM_LittleRock_2" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(2.91725, 1.84764, 8.11049, 1.3726, -8.58391, 1.46178, 8.20426, 0.779137, -3.12847, -5.96333, -149.231, -6.39691)
+
+[node name="SM_LittleRock_3" parent="Abyss/Background" instance=ExtResource("4_dkbql")]
+transform = Transform3D(2.28282, 4.63634, 7.14124, 2.27665, -7.45664, 4.11334, 8.20426, 0.779137, -3.12847, -45.5069, -160.934, 2.35197)
+
+[node name="Temple2" parent="Abyss" instance=ExtResource("11_ky80y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5169, -314.027, 0)
