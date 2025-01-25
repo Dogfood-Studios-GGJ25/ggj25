@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://biuku7kn2o56d"]
+
+[ext_resource type="PackedScene" uid="uid://by0jvnocf7uva" path="res://Meshes/sandbank.blend" id="1_si0mr"]
+[ext_resource type="Material" uid="uid://bkcor375bi8nr" path="res://Meshes/sandbank.tres" id="2_ji0x1"]
+
+[node name="sandbank" instance=ExtResource("1_si0mr")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ji0x1")
