@@ -16,11 +16,10 @@ ssao_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.2
 volumetric_fog_albedo = Color(0.718528, 0.78386, 1, 1)
 volumetric_fog_emission = Color(5.67943e-06, 0, 0.906579, 1)
 volumetric_fog_gi_inject = 0.0
-volumetric_fog_length = 4.0
+volumetric_fog_length = 100.0
 volumetric_fog_detail_spread = 6.0
 volumetric_fog_sky_affect = 0.5
 

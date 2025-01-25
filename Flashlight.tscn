@@ -18,6 +18,7 @@ light_size = 1.0
 shadow_enabled = true
 distance_fade_enabled = true
 spot_range = 8.0
+spot_angle = 30.0
 script = ExtResource("1_rvwew")
 
 [node name="FogVolume" type="FogVolume" parent="."]

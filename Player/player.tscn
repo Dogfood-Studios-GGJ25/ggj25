@@ -32,6 +32,8 @@ mesh = SubResource("CapsuleMesh_6r5ev")
 skeleton = NodePath("../..")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+spring_length = 0.0
 
 [node name="SpotLight3D" parent="SpringArm3D" instance=ExtResource("2_pb1ki")]
-transform = Transform3D(0.000151079, -0.00154029, -0.999999, -0.000132424, 0.999999, -0.00154031, 1, 0.000132657, 0.000150875, 0.694477, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61684e-08, 0, -0.36989)

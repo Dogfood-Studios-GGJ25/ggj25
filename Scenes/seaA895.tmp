@@ -28,7 +28,7 @@ gi_mode = 2
 mesh = SubResource("BoxMesh_wudvy")
 surface_material_override/0 = SubResource("StandardMaterial3D_60ims")
 
-[node name="Camera" type="Camera3D" parent="." groups=["Camera3D"]]
+[node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.79815)
 fov = 70.0
 
