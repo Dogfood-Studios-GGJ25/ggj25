@@ -2,6 +2,9 @@ extends CharacterBody3D
 
 @onready var spring_arm = $SpringArm3D
 @onready var spotlight = $SpringArm3D/SpotLight3D
+@onready var oxy_level: Label3D = $OxyLevel
+
+@export var oxygen_level : int = 100
 
 const SPEED = 1.0
 const MAX_SPEED = 3.0
@@ -17,9 +20,10 @@ var camera
 var spotlight_state: bool = false
 
 
+
 func _ready():
 	camera = get_tree().get_first_node_in_group("Camera3D")
-
+	update_o2_label()
 
 func _physics_process(delta: float) -> void:
 # Spotlight looking at mouse position
@@ -29,6 +33,7 @@ func _physics_process(delta: float) -> void:
 	var t = -ray_origin.z / ray_direction.z 
 	var world_pos = ray_origin + ray_direction * t
 	spring_arm.look_at(world_pos)
+
 
 # actions
 	if Input.is_action_just_pressed("mouse_left_click"):
@@ -60,8 +65,20 @@ func _physics_process(delta: float) -> void:
 	velocity.x = current_speed_x
 	velocity.y = current_speed_y + gravity_velocity
 
+	interact_with_bubbles()
 	move_and_slide()
 
+func update_o2_label():
+	oxy_level.text = "O2: " + str(oxygen_level)
+
+func interact_with_bubbles() -> void:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider is Bubble:
+			var o2_gained = collider.pop_for_oxygen()
+			oxygen_level += o2_gained
+			update_o2_label()
 
 func on_interact(state):
 	match state:
