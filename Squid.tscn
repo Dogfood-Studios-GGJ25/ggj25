@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://6v4pue7yj1ce"]
+
+[ext_resource type="Script" path="res://SquidPath.gd" id="1_vg8jm"]
+[ext_resource type="PackedScene" uid="uid://dftbwq2me3pup" path="res://Meshes/Squid.glb" id="2_2l8cu"]
+
+[sub_resource type="Curve3D" id="Curve3D_2hmrp"]
+bake_interval = 25.55
+_data = {
+"points": PackedVector3Array(166.948, 114.487, -26.1343, -166.948, -114.487, 26.1343, 454.502, 64.8796, -326.771, 111.205, -26.7226, 42.7156, -111.205, 26.7226, -42.7156, 19.6003, 109.991, -339.128, 144.78, -31.3401, -60.1479, -144.78, 31.3401, 60.1479, -358.723, 126.158, -381.251, 141.029, 141.368, 51.4761, -141.029, -141.368, -51.4761, -834.953, 42.5747, -494.124, 152.778, -2.29727, -162.47, -152.778, 2.29727, 162.47, -1110.79, -185.897, -252.942, -5.27557, -6.35689, 5.58417, 5.27557, 6.35689, -5.58417, -1022.75, 120.581, 300.781),
+"tilts": PackedFloat32Array(0, 5, 0, 1, 1, 0)
+}
+point_count = 6
+
+[node name="Squid Path" type="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 377.496, 1.52642, -138.191)
+curve = SubResource("Curve3D_2hmrp")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(1.54659, -5.54154, -8.17926, 0, 8.27886, -5.60903, 9.87973, 0.867482, 1.28039, 454.502, 64.8796, -326.771)
+use_model_front = true
+loop = false
+tilt_enabled = false
+script = ExtResource("1_vg8jm")
+
+[node name="Squid2" parent="PathFollow3D" instance=ExtResource("2_2l8cu")]
+transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 1, 0, -1, 0, -4.37113e-08, 0, 0, 0)
