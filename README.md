@@ -43,7 +43,7 @@ A slow decent into deep ocean accompanied by ...
 - You encounter rocks now and then
 	- sometimes they have eyes
 
-##Items
+## Items
 - air bubbles
 	- float up, very little time to reach
 	- gives air
