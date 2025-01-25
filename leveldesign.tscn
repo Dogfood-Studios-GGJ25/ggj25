@@ -4,15 +4,15 @@
 [ext_resource type="Script" path="res://game_ender.gd" id="1_836wd"]
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_ucrc6"]
 [ext_resource type="Script" path="res://Scripts/particles.gd" id="2_75p1g"]
-[ext_resource type="PackedScene" uid="uid://cc20ff53teico" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
-[ext_resource type="PackedScene" uid="uid://cwhrr5vxmekiu" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]
-[ext_resource type="PackedScene" uid="uid://5speyvvxxkba" path="res://Meshes/preparedrock3.tscn" id="4_dkbql"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock3.tscn" id="4_dkbql"]
 [ext_resource type="PackedScene" uid="uid://cnyqv7dko6y5q" path="res://Player/bounding_player_box.tscn" id="4_ontjx"]
-[ext_resource type="PackedScene" uid="uid://72hykw7r04vr" path="res://Meshes/preparedrock4.tscn" id="5_uokvx"]
-[ext_resource type="PackedScene" uid="uid://bvjqu1klod5fi" path="res://Meshes/preparedrock5.tscn" id="6_nycnj"]
-[ext_resource type="PackedScene" uid="uid://ysw2rs6sq3qg" path="res://Meshes/preparedrock6.tscn" id="7_lay7s"]
-[ext_resource type="PackedScene" uid="uid://dfmyh0eg0tb2y" path="res://eye.tscn" id="8_d63hi"]
-[ext_resource type="PackedScene" uid="uid://d1kv872rstbdn" path="res://rockeyelids.tscn" id="9_8idos"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock4.tscn" id="5_uokvx"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock5.tscn" id="6_nycnj"]
+[ext_resource type="PackedScene" path="res://Meshes/preparedrock6.tscn" id="7_lay7s"]
+[ext_resource type="PackedScene" path="res://eye.tscn" id="8_d63hi"]
+[ext_resource type="PackedScene" path="res://rockeyelids.tscn" id="9_8idos"]
 [ext_resource type="PackedScene" uid="uid://07jewl4tvikr" path="res://Meshes/temple_2.tscn" id="11_ky80y"]
 [ext_resource type="Material" uid="uid://ck18nbes0vtha" path="res://Meshes/sandbank.tres" id="11_uns7d"]
 [ext_resource type="PackedScene" uid="uid://6v4pue7yj1ce" path="res://Scenes/Squid/Squid.tscn" id="12_wrj87"]
@@ -683,5 +683,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5169, -314.027, 0)
 [node name="LittleFishies" type="Node3D" parent="."]
 
 [node name="Littlefish" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67313, 35.6509, -7.378)
 texture = ExtResource("17_lh2ux")
 script = ExtResource("18_2a2xo")
