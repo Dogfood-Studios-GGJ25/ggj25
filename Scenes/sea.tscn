@@ -35,7 +35,7 @@ axis_lock_linear_z = true
 axis_lock_angular_z = true
 safe_margin = 0.01
 
-[node name="OxyLevel" type="Label3D" parent="BoundingPlayerBox/Player"]
+[node name="OxyLevel2" type="Label3D" parent="BoundingPlayerBox/Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.696432, 0)
 billboard = 1
 text = "100"
