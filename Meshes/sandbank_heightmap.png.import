@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chfhuldeyy2ui"
-path.s3tc="res://.godot/imported/cute_astronaut_0.jpg-d19d5b6927326ecb0032ccd1ccf1cb27.s3tc.ctex"
+uid="uid://b57cnm7ei5d8v"
+path.s3tc="res://.godot/imported/sandbank_heightmap.png-464e74d66dfcb2fd82243c394a8aee38.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "7f07019aa3a011469e0294756287e2a3"
-}
 
 [deps]
 
-source_file="res://Assets/Astronaut/cute_astronaut_0.jpg"
-dest_files=["res://.godot/imported/cute_astronaut_0.jpg-d19d5b6927326ecb0032ccd1ccf1cb27.s3tc.ctex"]
+source_file="res://Meshes/sandbank_heightmap.png"
+dest_files=["res://.godot/imported/sandbank_heightmap.png-464e74d66dfcb2fd82243c394a8aee38.s3tc.ctex"]
 
 [params]
 
@@ -27,8 +24,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=7
+roughness/src_normal="res://Meshes/sandbank_normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
