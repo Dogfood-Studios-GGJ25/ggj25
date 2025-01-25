@@ -37,13 +37,18 @@ config/icon="res://icon.svg"
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [dotnet]
 
 project/assembly_name="GGJ25_Dogfood_Studios"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
