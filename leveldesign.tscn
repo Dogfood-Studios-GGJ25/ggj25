@@ -683,6 +683,81 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5169, -314.027, 0)
 [node name="LittleFishies" type="Node3D" parent="."]
 
 [node name="Littlefish" type="Sprite3D" parent="LittleFishies"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67313, 44.4032, -3.74168)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.67313, 44.4032, -3.74168)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish2" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 8.92607, 54.2915, -3.74168)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish3" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.67313, 41.295, -5.31211)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish11" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.32001, 39.5759, -7.84877)
+flip_h = true
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish12" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 7.04244, 40.4197, -6.36333)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish13" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.25075, 36.6428, -5.21716)
+flip_h = true
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish14" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 5.11917, 33.2783, -13.4426)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish15" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.67313, 38.9896, -11.4499)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish4" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 7.97002, 45.604, -3.74168)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish5" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.60751, 46.5756, -3.74168)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish6" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.00008, 42.3989, -3.74168)
+flip_h = true
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish7" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.67313, 44.4032, -9.99496)
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish8" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.52449, 46.3943, -11.299)
+flip_h = true
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish9" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 8.14807, 48.9028, -3.74168)
+flip_h = true
+texture = ExtResource("17_lh2ux")
+script = ExtResource("18_2a2xo")
+
+[node name="Littlefish10" type="Sprite3D" parent="LittleFishies"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.21499, 48.105, -3.74168)
 texture = ExtResource("17_lh2ux")
 script = ExtResource("18_2a2xo")
