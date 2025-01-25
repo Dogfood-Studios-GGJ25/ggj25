@@ -7,7 +7,7 @@ extends Node3D
 @export var float_speed := 0.2
 @export var player_influence := 0.3
 
-@onready var player: CharacterBody3D = $"../../Player"
+@onready var player: CharacterBody3D = $"../../BoundingPlayerBox/Player"
 
 var particles: MultiMesh
 var time := 0.0

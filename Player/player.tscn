@@ -42,3 +42,5 @@ spring_length = 0.0
 [node name="SpotLight3D" parent="SpringArm3D" instance=ExtResource("2_pb1ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61684e-08, 0, -0.36989)
 visible = false
+
+[connection signal="object_detected" from="SpringArm3D/SpotLight3D" to="." method="_on_spot_light_3d_object_detected"]
