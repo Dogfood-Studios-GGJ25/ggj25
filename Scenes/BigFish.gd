@@ -7,7 +7,7 @@ var swimtime = 0.0
 var variance = 0.003
 var targetRotation = 0.00
 var targetRotationDirection = 0
-var rotationSpeed = 0.01
+var rotationSpeed = 0.0001
 var rotating = false
 
 
@@ -50,9 +50,9 @@ func rotateSlow():
 	else:
 		
 		if targetRotationDirection == 1:
-			if targetRotation > 0.000: #as long targetrotation is lower than zero
+			if targetRotation > 0.000: #as long targetrotation is higher than zero
 				print_debug("Before: ",targetRotation)
-				targetRotation -= rotationSpeed #rotationspeed added for check
+				targetRotation -= rotationSpeed #rotationspeed subtracted for check
 				print_debug("After: ",targetRotation)
 				rotation -= rotationSpeed #actual rotation
 			else:
@@ -61,8 +61,8 @@ func rotateSlow():
 			
 		elif targetRotationDirection == -1:
 			print(targetRotation)
-			if targetRotation < 0.000: #as long targetrotation is higher than zero
-				targetRotation += rotationSpeed #rotationspeed subtracted for check
+			if targetRotation < 0.000: #as long targetrotation is lower than zero
+				targetRotation += rotationSpeed #rotationspeed added for check
 				rotation += rotationSpeed #actual rotation
 			else:
 				rotating = false
