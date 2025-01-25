@@ -8,6 +8,7 @@
 bank_paths = ["res://FMODBanks/Desktop/Master.strings.bank", "res://FMODBanks/Desktop/Master.bank"]
 
 [node name="FmodBreath" parent="FmodBankLoader" instance=ExtResource("1_b20pj")]
+unique_name_in_owner = true
 
 [node name="EnvironmentNoise" type="FmodEventEmitter3D" parent="FmodBankLoader"]
 event_name = "event:/Environment"

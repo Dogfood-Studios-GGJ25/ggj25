@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var flashlight_level : int = 100
 
 signal player_death
+signal oxygen_changed
 
 const SPEED = 1.0
 const MAX_SPEED = 3.0
@@ -101,6 +102,7 @@ func _on_spot_light_3d_object_detected(object: Variant) -> void:
 func _on_oxygen_timer_timeout() -> void:
 	oxygen_level -= 1
 	update_o2_label()
+	SignalBus.Oxygen_Changed.emit(oxygen_level)
 	if oxygen_level == 0:
 		set_process(false)
 		set_physics_process(false)

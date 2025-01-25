@@ -21,18 +21,18 @@ func swim(delta):
 
 	if !swimming: 
 		swimtime = randf_range(0.1,0.5) * 10
-		rotation += randf() * PI
+		#rotation += randf() * PI
 		swimming = true
 
 	if swimming:
 		time += delta
 		print_debug("swimtime: ", swimtime)
 		print_debug("time: ", time)
-		if time <= swimtime:
-			var velocity = Vector3.LEFT.rotated(rotation) * speed
-			position += velocity
-		else:
-			time = 0
-			swimming = false
+		#if time <= swimtime:
+		#	var velocity = Vector3.LEFT.rotated(rotation) * speed
+		#	position += velocity
+		#else:
+		#	time = 0
+		#	swimming = false
 pass
 	
