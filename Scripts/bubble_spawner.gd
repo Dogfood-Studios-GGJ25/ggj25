@@ -8,7 +8,6 @@ var bubble_seen = preload("res://Environment/bubble.tscn")
 func spawn_bubble() -> void:
 	var bubble = bubble_seen.instantiate()
 	var x = -5 + (randf() * 10.0)
-	printt(x, self.position.y, self.position.z)
 	bubble.position = Vector3(x, position.y, position.z)	
 	add_child(bubble)
 

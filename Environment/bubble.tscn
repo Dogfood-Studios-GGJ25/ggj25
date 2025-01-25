@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://brn3ueyfguy62"]
+[gd_scene load_steps=5 format=3 uid="uid://brn3ueyfguy62"]
 
 [ext_resource type="Script" path="res://Scripts/bubble.gd" id="1_eqqc2"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lcnm"]
+transparency = 1
+albedo_color = Color(0.459509, 0.691826, 0.762811, 0.462745)
+metallic = 0.54
+metallic_specular = 0.4
+emission_enabled = true
+
 [sub_resource type="SphereMesh" id="SphereMesh_gm3gl"]
+material = SubResource("StandardMaterial3D_0lcnm")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r8tic"]
 
