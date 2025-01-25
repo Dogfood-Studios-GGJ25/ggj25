@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm04nw5vtbd23"]
+[gd_scene load_steps=10 format=3 uid="uid://bm04nw5vtbd23"]
 
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_5qxhj"]
 [ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="2_3m072"]
 [ext_resource type="Script" path="res://Scripts/particles.gd" id="2_7jawa"]
 [ext_resource type="PackedScene" uid="uid://dd13j1y3vodxx" path="res://Audio/FMOD_Test.tscn" id="2_sjdab"]
+[ext_resource type="Shader" path="res://Environment/minibubbles.gdshader" id="3_al58l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2qnqa"]
+render_priority = 0
+shader = ExtResource("3_al58l")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ft57"]
 size = Vector3(0.1, 10, 10)
@@ -22,6 +27,7 @@ script = ExtResource("2_7jawa")
 particle_size = Vector2(0.001, 0.001)
 particle_color = Color(1, 1, 1, 1)
 player_influence = 0.2
+particle_material = SubResource("ShaderMaterial_2qnqa")
 
 [node name="BoundingPlayerBox" type="Node3D" parent="."]
 

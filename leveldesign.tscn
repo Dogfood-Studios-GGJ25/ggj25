@@ -21,7 +21,7 @@ script = ExtResource("1_836wd")
 [node name="divinglevel" parent="." instance=ExtResource("1_dcoo6")]
 transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 1, 0, -2)
 
-[node name="rocks" type="Node" parent="."]
+[node name="rocks" type="Node3D" parent="."]
 
 [node name="SM_LittleRock_01" parent="rocks" instance=ExtResource("2_mkl5d")]
 transform = Transform3D(5.845, 0, 0, 0, 5.845, 0, 0, 0, 5.845, -4.18639, -4.81358, -7.48022)
@@ -168,7 +168,7 @@ transform = Transform3D(7.35956, -2.49193, 0, 2.49193, 7.35956, 0, 0, 0, 7.77, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.777, -107.668, 0.691148)
 mesh = SubResource("SphereMesh_mjxo8")
 
-[node name="eyes" type="Node" parent="."]
+[node name="eyes" type="Node3D" parent="."]
 
 [node name="eye" parent="eyes" instance=ExtResource("8_d63hi")]
 transform = Transform3D(0.102665, 0.0220207, 0, -0.0220207, 0.102665, 0, 0, 0, 0.105, 21.9575, -103.998, -8.4473)
@@ -212,7 +212,7 @@ transform = Transform3D(0.0801789, -0.0304644, -0.0605662, 0.0287251, 0.100232, 
 [node name="eye7" parent="eyes" instance=ExtResource("8_d63hi")]
 transform = Transform3D(0.102596, -0.0223377, 0, 0.0223377, 0.102596, 0, 0, 0, 0.105, -7.616, -109.851, 1.2267)
 
-[node name="eyelids" type="Node" parent="."]
+[node name="eyelids" type="Node3D" parent="."]
 
 [node name="rockeyelids" parent="eyelids" instance=ExtResource("9_8idos")]
 transform = Transform3D(-0.202616, 0.560062, 1.30557, 0.296938, 1.30634, -0.514312, -1.38924, 0.197536, -0.300341, 20.4225, -103.794, -3.54288)

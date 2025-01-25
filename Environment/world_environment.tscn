@@ -1,15 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://cndvi0d6a8f5v"]
+[gd_scene load_steps=8 format=3 uid="uid://cndvi0d6a8f5v"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_paulp"]
-rayleigh_color = Color(0.190243, 0.268814, 0.415358, 1)
-mie_color = Color(0.390347, 0.439244, 0.545274, 1)
+[ext_resource type="Shader" path="res://Environment/sky.gdshader" id="1_0x1fv"]
+[ext_resource type="Texture2D" uid="uid://bqji37df41fxy" path="res://Textures/water-424807_1280.jpg" id="2_2dfcc"]
+
+[sub_resource type="Gradient" id="Gradient_jgbl0"]
+offsets = PackedFloat32Array(0, 0.990083)
+colors = PackedColorArray(0.00353838, 0, 0.231376, 1, 0.136823, 8.62503e-05, 0.445034, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5euan"]
+gradient = SubResource("Gradient_jgbl0")
+use_hdr = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whblb"]
+shader = ExtResource("1_0x1fv")
+shader_parameter/energy = 4.5
+shader_parameter/gamma = 1.942
+shader_parameter/scale = Vector3(-0.3, 0.41, 0.705)
+shader_parameter/triplanar_blend_power = 6.076
+shader_parameter/seamless_blend = 0.5
+shader_parameter/movement_speed = 0.03
+shader_parameter/movement_direction = Vector2(1, 0.5)
+shader_parameter/sky_tex = ExtResource("2_2dfcc")
+shader_parameter/tint_ramp = SubResource("GradientTexture2D_5euan")
 
 [sub_resource type="Sky" id="Sky_ypve0"]
-sky_material = SubResource("PhysicalSkyMaterial_paulp")
+sky_material = SubResource("ShaderMaterial_whblb")
 process_mode = 1
 
 [sub_resource type="Environment" id="Environment_amtkb"]
 background_mode = 2
+background_energy_multiplier = 0.18
 sky = SubResource("Sky_ypve0")
 ambient_light_source = 1
 ambient_light_color = Color(0.0458209, 2.40654e-08, 0.382735, 1)
@@ -19,7 +39,7 @@ sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.718528, 0.78386, 1, 1)
-volumetric_fog_emission = Color(1.15514e-06, 9.62615e-08, 0.433118, 1)
+volumetric_fog_emission = Color(2.28621e-07, 4.81308e-08, 0.184122, 1)
 volumetric_fog_gi_inject = 0.0
 volumetric_fog_length = 100.0
 volumetric_fog_detail_spread = 6.0
