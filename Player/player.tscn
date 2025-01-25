@@ -1,10 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds2x5oq5ienrx"]
+[gd_scene load_steps=15 format=3 uid="uid://ds2x5oq5ienrx"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_iijgt"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_iijgt"]
+[ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Flashlight.tscn" id="2_pb1ki"]
+[ext_resource type="Shader" path="res://Assets/Bubble_effect/bubble.gdshader" id="2_y6wap"]
+[ext_resource type="PackedScene" uid="uid://bvna3mye4h53x" path="res://Assets/Astronaut/cute_astronaut.glb" id="4_6rwag"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ha2lk"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2whx7"]
+frequency = 0.0018
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tknqs"]
+noise = SubResource("FastNoiseLite_2whx7")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kovwd"]
+frequency = 0.0015
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t45b3"]
+noise = SubResource("FastNoiseLite_kovwd")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mmi74"]
+frequency = 0.001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sdrnk"]
+noise = SubResource("FastNoiseLite_mmi74")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_decl4"]
+render_priority = 0
+shader = ExtResource("2_y6wap")
+shader_parameter/distortionView = 0.01
+shader_parameter/speedView = 0.01
+shader_parameter/tintColor = Color(0.241156, 0.241156, 0.241156, 1)
+shader_parameter/fesnelAmount = 0.8
+shader_parameter/distortionVertex = 0.05
+shader_parameter/speedVertex = 0.08
+shader_parameter/noiseViewX = SubResource("NoiseTexture2D_t45b3")
+shader_parameter/noiseViewY = SubResource("NoiseTexture2D_sdrnk")
+shader_parameter/noiseVertex = SubResource("NoiseTexture2D_tknqs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0iwr"]
+render_priority = 0
+shader = ExtResource("2_y6wap")
+shader_parameter/distortionView = 0.03
+shader_parameter/speedView = 0.5
+shader_parameter/tintColor = null
+shader_parameter/fesnelAmount = null
+shader_parameter/distortionVertex = 0.03
+shader_parameter/speedVertex = 0.1
+
 [sub_resource type="SphereMesh" id="SphereMesh_uj22g"]
+material = SubResource("ShaderMaterial_m0iwr")
 
 [node name="Player" type="CharacterBody3D"]
 axis_lock_linear_x = true
@@ -16,4 +61,18 @@ script = ExtResource("1_iijgt")
 shape = SubResource("SphereShape3D_ha2lk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_decl4")
 mesh = SubResource("SphereMesh_uj22g")
+
+[node name="Sketchfab_Scene" parent="MeshInstance3D" instance=ExtResource("4_6rwag")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+spring_length = 0.0
+
+[node name="SpotLight3D" parent="SpringArm3D" instance=ExtResource("2_pb1ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61684e-08, 0, -0.36989)
+visible = false
+
+[connection signal="object_detected" from="SpringArm3D/SpotLight3D" to="." method="_on_spot_light_3d_object_detected"]
