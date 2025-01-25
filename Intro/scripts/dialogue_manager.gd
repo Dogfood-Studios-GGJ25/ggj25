@@ -40,6 +40,7 @@ func _on_dialogic_signal(argument: String):
 			title.visible = true
 			await get_tree().create_timer(5.0).timeout
 			
+			BGMusic.play_main_music()
 			# Add scene transition here
 			change_scene()
 	else:

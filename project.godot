@@ -38,6 +38,7 @@ boot_splash/minimum_display_time=3
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+BGMusic="*res://Audio/MusicPlayer.tscn"
 
 [dialogic]
 

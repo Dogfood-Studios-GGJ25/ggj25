@@ -91,6 +91,7 @@ func _ready():
 	else:
 		videoplayer.set_volume_db(0)
 	videoplayer.play()
+	BGMusic.play_credits_music()
 	
 
 func _process(delta):
