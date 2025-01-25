@@ -5,7 +5,7 @@
 [sub_resource type="FogMaterial" id="FogMaterial_qg4md"]
 
 [node name="SpotLight3D" type="SpotLight3D"]
-transform = Transform3D(0.000151079, -0.00154029, -0.999999, -0.000132424, 0.999999, -0.00154031, 1, 0.000132656, 0.000150875, 0.694477, 0, 0)
+transform = Transform3D(0.000151079, -0.00154029, -0.999999, -0.000132424, 0.999999, -0.00154031, 1, 0.000132657, 0.000150875, 1.32057, 0, 0)
 light_color = Color(0.555646, 0.826809, 0.939066, 1)
 light_energy = 40.0
 light_indirect_energy = 6.576

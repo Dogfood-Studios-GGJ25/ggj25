@@ -25,6 +25,7 @@ player_influence = 0.2
 [node name="BoundingPlayerBox" type="Node3D" parent="."]
 
 [node name="Player" parent="BoundingPlayerBox" instance=ExtResource("2_3m072")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = true
@@ -63,3 +64,8 @@ collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_r87kx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.183013, 0.683013, 0, 0.965926, 0.258819, -0.707107, -0.183013, 0.683013, 0, 0, 0)
+light_color = Color(0, 0, 1, 1)
+light_energy = 0.3

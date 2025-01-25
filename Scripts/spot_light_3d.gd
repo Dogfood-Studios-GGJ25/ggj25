@@ -13,7 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	check_all_raycasts()
+	if visible:
+		check_all_raycasts()
 
 
 func check_all_raycasts():
