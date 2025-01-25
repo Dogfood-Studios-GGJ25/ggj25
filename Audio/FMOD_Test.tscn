@@ -3,14 +3,13 @@
 [node name="AudioPlayer" type="Node3D"]
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://FMODBanks/Desktop/Master.strings.bank", "res://FMODBanks/Desktop/Master.bank"]
+bank_paths = ["res://FMODBanks/Desktop/Master.strings.bank", "res://FMODBanks/Desktop/Master.bank", "res://FMODBanks/Desktop/Breath.bank"]
 
 [node name="FmodListener3D" type="FmodListener3D" parent="."]
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/BackgroundMusic"
 event_guid = "{0c8f796e-97aa-4183-819e-88d97c5348ad}"
-autoplay = true
 volume = 0.6
 fmod_parameters/State/id = -8436468672577815637
 fmod_parameters/State = 0
