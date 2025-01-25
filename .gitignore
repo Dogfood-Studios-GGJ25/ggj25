@@ -15,3 +15,6 @@ data_*/
 mono_crash.*.json
 
 .idea
+addons/.DS_Store
+addons/fmod/.DS_Store
+addons/fmod/libs/.DS_Store

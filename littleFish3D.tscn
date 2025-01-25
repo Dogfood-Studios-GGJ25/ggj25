@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ufxe0k3tm0lx"]
+
+[ext_resource type="Script" path="res://LittleFish3D.gd" id="1_y6dfj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+script = ExtResource("1_y6dfj")
