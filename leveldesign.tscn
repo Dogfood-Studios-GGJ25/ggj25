@@ -276,7 +276,7 @@ particle_color = Color(1, 1, 1, 1)
 player_influence = 0.2
 
 [node name="BoundingPlayerBox" parent="." instance=ExtResource("4_ontjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 71.4263, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 71.426, 0)
 
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
@@ -810,7 +810,7 @@ monster_sprite = NodePath("BigMonsterEye")
 omni_light = NodePath("../Temple2/OmniLight3D")
 
 [node name="BigMonsterEye" type="Sprite3D" parent="Abyss/MonsterAtTheEnd"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.4613, -30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.6659, -30)
 modulate = Color(1, 1, 1, 0)
 pixel_size = 0.1
 double_sided = false
