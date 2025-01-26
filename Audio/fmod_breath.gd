@@ -20,6 +20,11 @@ func _process(delta: float) -> void:
 		get_node("BubbleEmitter").play()
 		timer = 0
 		breathState = 0
+	if(timer > breathTiming[stress] && breathState == 2):
+		get_node("BreathEmitter").set_parameter("state", 5)
+		get_node("BreathEmitter").play()
+		timer = 0
+		breathState = 3
 		
 func IncreaseStress() -> void:
 	stress += 1
@@ -34,6 +39,8 @@ func SetStressLevel(level: int) -> void:
 	
 func OnOxygenChanged(oxygen_level: int) -> void:
 	print("oxy = ", oxygen_level)
+	if oxygen_level == 0:
+		breathState = 2
 	if oxygen_level < 10:
 		SetStressLevel(4)
 	elif oxygen_level < 30:
