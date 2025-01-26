@@ -100,7 +100,7 @@ func _on_spot_light_3d_object_detected(object: Variant) -> void:
 	print("Detected object in spotlight:", object)
 
 func _on_oxygen_timer_timeout() -> void:
-	oxygen_level -= 1
+	#oxygen_level -= 1
 	update_o2_label()
 	SignalBus.Oxygen_Changed.emit(oxygen_level)
 	if oxygen_level == 0:
