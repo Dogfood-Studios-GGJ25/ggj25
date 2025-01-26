@@ -11,9 +11,10 @@ func _ready() -> void:
 	spawn_timer.connect("timeout", Callable(self, "_on_spawn_timer_timeout")) 
 	add_child(spawn_timer)
 	spawn_timer.start()
+	spawn_enemy()
 
 func _on_spawn_timer_timeout() -> void:
-	spawn_enemy() # Spawn a new enemy every 10 seconds
+	spawn_enemy()
 
 func spawn_enemy() -> void:
 	print("enemy spawned")

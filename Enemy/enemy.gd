@@ -4,9 +4,10 @@ var speed = 1.0
 var target_position: Vector3
 
 
-# func _ready() -> void:
-	# var flashlight = get_parent().get_node("Flashlight/SpotLight3D") # Adjust the path to your flashlight
-	# flashlight.connect("object_detected", self, "_on_object_detected")
+func _ready() -> void:
+	var flashlight = get_parent().get_parent().get_node("Player/SpringArm3D/SpotLight3D")
+	print(flashlight)
+	flashlight.connect("object_detected", Callable(self, "_on_object_detected"))
 
 
 func _process(delta: float) -> void:
