@@ -11,7 +11,9 @@
 A slow decent into deep ocean accompanied by ...
 
 ### UI
-- diegetic, no explicit UI
+Diegetic, no explicit UI
+- Air bubble size shows amount of air
+- Enemies have clear, direct response to the flashlight
 
 ## MDA
 ### Fear
@@ -26,10 +28,11 @@ A slow decent into deep ocean accompanied by ...
 - Air bubble shrinking over time
 - Saving air to prevent the bubble shrinkage
 	- holding breath, leads to hallucination and diminished vision by vignette
+- Catching air bubbles to increase storaged air
 - Fish attacking
 - Avoid Fish
 - loud flashlight to scare enemies
-	- loud flashlight attracts enemies
+	- loudness attracts enemies
 	- enemies get scared away when in the light
 
 ## Controls
