@@ -34,6 +34,7 @@ Diegetic, no explicit UI
 - loud flashlight to scare enemies
 	- loudness attracts enemies
 	- enemies get scared away when in the light
+- Uncommon controls
 
 ## Controls
 - arrow-keys, y-axis inverted
