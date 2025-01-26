@@ -1,6 +1,6 @@
 extends Marker3D
 
-var bubble_seen = preload("res://Environment/bubble.tscn")
+@export var bubble_seen = preload("res://Environment/bubble.tscn")
 		
 func spawn_bubble() -> void:
 	var bubble = bubble_seen.instantiate()
