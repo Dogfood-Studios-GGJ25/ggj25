@@ -19,4 +19,8 @@ fmod_parameters/State/id = -8436468672577815637
 fmod_parameters/State = 0
 fmod_parameters/State/variant_type = 2
 
+[node name="ScaryEventEmitter" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/ScaryShit"
+event_guid = "{f77f02b9-9cc6-46d0-8c45-c069858670b0}"
+
 [node name="FmodListener3D" type="FmodListener3D" parent="."]

@@ -4,12 +4,14 @@ var timer = 4
 var stress = 0
 var breathState = 0
 var breathTiming = [3, 2.3, 1.5, 1, 0.8]
+var ScaryTimer = 0
 
 func _ready():
 	SignalBus.Oxygen_Changed.connect(OnOxygenChanged)
 
 func _process(delta: float) -> void:
 	timer += delta
+	ScaryTimer += delta
 	if(timer > breathTiming[stress] && breathState == 0):
 		get_node("BreathEmitter").set_parameter("state", stress)
 		get_node("BreathEmitter").play()
@@ -25,6 +27,9 @@ func _process(delta: float) -> void:
 		get_node("BreathEmitter").play()
 		timer = 0
 		breathState = 3
+	if ScaryTimer > 120:
+		get_node("ScaryEventEmitter").play()
+		ScaryTimer = 0
 		
 func IncreaseStress() -> void:
 	stress += 1
