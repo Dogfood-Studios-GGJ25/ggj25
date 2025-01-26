@@ -86,6 +86,7 @@ func interact_with_bubbles() -> void:
 			var o2_gained = collider.pop_for_oxygen()
 			oxygen_level += o2_gained
 			update_o2_label()
+			SignalBus.Oxygen_Changed.emit(oxygen_level)
 
 func on_interact(state):
 	match state:
@@ -101,6 +102,7 @@ func _on_spot_light_3d_object_detected(object: Variant) -> void:
 func _on_oxygen_timer_timeout() -> void:
 	oxygen_level -= 1
 	update_o2_label()
+	SignalBus.Oxygen_Changed.emit(oxygen_level)
 	if oxygen_level == 0:
 		set_process(false)
 		set_physics_process(false)

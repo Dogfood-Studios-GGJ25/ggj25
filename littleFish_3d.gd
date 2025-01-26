@@ -1,6 +1,7 @@
 
 extends Sprite3D
-var speed = 0.003
+var turnSpeed = 0.003
+var moveSpeed = 0.0003
 var angle = -PI
 var time = 0
 var swimming = false
@@ -28,8 +29,8 @@ func swim(delta):
 		time += delta
 		if time <= swimtime:
 			#var velocity = Vector3.LEFT.rotated(rotation) * speed
-			rotate_z(speed)
-			#transform.basis.x *= speed
+			rotate_z(turnSpeed)
+			#transform.basis.x *= moveSpeed
 			#position += velocity
 		else:
 			time = 0

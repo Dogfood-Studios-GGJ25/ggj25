@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/bubble_spawner.gd" id="2_cbpkb"]
 [ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="3_ai6ne"]
-[ext_resource type="PackedScene" uid="uid://dd13j1y3vodxx" path="res://Audio/FMOD_Test.tscn" id="4_oap6p"]
+[ext_resource type="PackedScene" uid="uid://dww1e7pwbctxq" path="res://Audio/fmod_all.tscn" id="3_so6g2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1wfr"]
 size = Vector3(0.1, 10, 10)
@@ -48,12 +48,11 @@ shape = SubResource("BoxShape3D_y1wfr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.79815)
 fov = 70.0
 
-[node name="Audio" parent="." instance=ExtResource("4_oap6p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, -0.183013, 0.683013, 0, 0.965926, 0.258819, -0.707107, -0.183013, 0.683013, 0, -31, 0)
 light_color = Color(0, 0, 1, 1)
 light_energy = 2.0
+
+[node name="FMOD All" parent="." instance=ExtResource("3_so6g2")]
 
 [connection signal="timeout" from="BubbleSpawRefPoint/Timer" to="BubbleSpawRefPoint" method="_on_timer_timeout"]
