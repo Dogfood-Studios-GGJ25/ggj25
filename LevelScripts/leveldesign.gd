@@ -5,7 +5,7 @@ extends Node3D
 @onready var camera: Node3D = get_tree().get_first_node_in_group("Camera3D")
 
 
-const SCROLL_SPEED = 1.0
+var SCROLL_SPEED = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,3 +19,8 @@ func _process(delta: float) -> void:
 	if (player.position.x - camera.position.x) < -3:
 		player_box.position.x -= 2 * delta
 	
+func stop_scrolling():
+	SCROLL_SPEED = 0
+
+func _on_temple_trigger_body_entered(body: Node3D) -> void:
+	stop_scrolling()

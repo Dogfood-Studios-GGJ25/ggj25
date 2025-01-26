@@ -22,6 +22,7 @@ autostart = true
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("3_ai6ne")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 5
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = true
