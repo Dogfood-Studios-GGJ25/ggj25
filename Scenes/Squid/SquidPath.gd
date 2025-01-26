@@ -1,6 +1,6 @@
 extends PathFollow3D
 
-const SPEED := 50
+const SPEED := 37
 
 func _physics_process(delta: float) -> void:
 	progress += SPEED * delta

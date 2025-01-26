@@ -18,7 +18,6 @@ curve = SubResource("Curve3D_2hmrp")
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
 transform = Transform3D(1.54659, -5.54155, -8.17924, -2.98025e-07, 8.27886, -5.60904, 9.87973, 0.867482, 1.28039, 21.2284, 64.8796, 101.881)
 use_model_front = true
-loop = false
 tilt_enabled = false
 script = ExtResource("1_vg8jm")
 

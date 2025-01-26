@@ -5,7 +5,7 @@ class_name Bubble
 @export var float_speed: float = 1.0  # Base upward speed
 @export var wobble_strength: float = 0.2  # How much side-to-side movement
 @export var wobble_speed: float = 2.0  # How fast it wobbles
-@export var oxygen_value: int = 3 # How much oxygen does this bubble give back?
+@export var oxygen_value: int = 5 # How much oxygen does this bubble give back?
 
 var time: float = 0.0
 var initial_position: Vector3
