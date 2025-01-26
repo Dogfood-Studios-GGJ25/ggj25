@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 		get_node("BreathEmitter").play()
 		timer = 0
 		breathState = 3
-	if ScaryTimer > 120:
+	if ScaryTimer > 285:
 		get_node("ScaryEventEmitter").play()
 		ScaryTimer = 0
 		
