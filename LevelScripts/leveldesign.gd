@@ -14,10 +14,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	player_box.position.y -= SCROLL_SPEED * delta
-	if (player.position.x - camera.position.x) > 3:
-		player_box.position.x += 2 * delta		
-	if (player.position.x - camera.position.x) < -3:
-		player_box.position.x -= 2 * delta
+	if (player.position.x - camera.position.x) > 4:
+		player_box.position.x += SCROLL_SPEED * delta		
+	if (player.position.x - camera.position.x) < -4:
+		player_box.position.x -= SCROLL_SPEED * delta
 	
 func stop_scrolling():
 	SCROLL_SPEED = 0
