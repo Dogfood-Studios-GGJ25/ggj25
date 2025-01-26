@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnyqv7dko6y5q"]
+[gd_scene load_steps=6 format=3 uid="uid://cnyqv7dko6y5q"]
 
 [ext_resource type="Script" path="res://Scripts/bubble_spawner.gd" id="2_cbpkb"]
 [ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="3_ai6ne"]
 [ext_resource type="PackedScene" uid="uid://dww1e7pwbctxq" path="res://Audio/fmod_all.tscn" id="3_so6g2"]
+[ext_resource type="PackedScene" uid="uid://m4xfnewg2cn3" path="res://Enemy/Enemy spawner.tscn" id="4_1w0h8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1wfr"]
 size = Vector3(0.1, 10, 10)
@@ -55,5 +56,7 @@ light_color = Color(0, 0, 1, 1)
 light_energy = 2.0
 
 [node name="FMOD All" parent="." instance=ExtResource("3_so6g2")]
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_1w0h8")]
 
 [connection signal="timeout" from="BubbleSpawRefPoint/Timer" to="BubbleSpawRefPoint" method="_on_timer_timeout"]
