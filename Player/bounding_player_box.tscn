@@ -19,7 +19,8 @@ process_callback = 0
 wait_time = 2.0
 autostart = true
 
-[node name="Player" parent="." instance=ExtResource("3_ai6ne")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_ai6ne")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 axis_lock_linear_x = false
 axis_lock_linear_y = false

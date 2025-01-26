@@ -64,6 +64,10 @@ project/assembly_name="GGJ25_Dogfood_Studios"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/fmod/plugin.cfg")
 
+[global_group]
+
+Player=""
+
 [input]
 
 player_left={

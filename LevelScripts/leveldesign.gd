@@ -1,6 +1,9 @@
 extends Node3D
 
 @onready var player_box: Node3D = $BoundingPlayerBox
+@onready var player: Node3D = get_tree().get_first_node_in_group("Player")
+@onready var camera: Node3D = get_tree().get_first_node_in_group("Camera3D")
+
 
 const SCROLL_SPEED = 1.0
 
@@ -11,4 +14,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	player_box.position.y -= SCROLL_SPEED * delta
+	if (player.position.x - camera.position.x) > 3:
+		player_box.position.x += 2 * delta		
+	if (player.position.x - camera.position.x) < -3:
+		player_box.position.x -= 2 * delta
 	
