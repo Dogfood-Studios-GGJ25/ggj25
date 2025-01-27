@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw2guccmk3yn6"]
+
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_ojpub"]
+[ext_resource type="Texture2D" uid="uid://ctfgqfb0syl5e" path="res://UI/Image/background02.png" id="2_1wicg"]
+[ext_resource type="Shader" path="res://Intro/shader/ripple.gdshader" id="3_go61o"]
+[ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Intro/Textures/Don’t look back..png" id="4_vhwpv"]
+[ext_resource type="Texture2D" uid="uid://b041oy0smx02q" path="res://UI/Image/dogfood-sprite.png" id="5_pa1iu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwlql"]
+shader = ExtResource("3_go61o")
+shader_parameter/wave_count = 10.0
+shader_parameter/speed = 2.0
+shader_parameter/height = 0.001
+
+[node name="CreditsScreen" type="Node2D"]
+script = ExtResource("1_ojpub")
+metadata/_edit_vertical_guides_ = [958.0, 178.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1wicg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ripple Shader" type="ColorRect" parent="CanvasLayer/Control"]
+z_index = 4
+material = SubResource("ShaderMaterial_uwlql")
+layout_mode = 0
+offset_left = 284.0
+offset_top = 42.0
+offset_right = 1235.0
+offset_bottom = 347.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Title" type="TextureRect" parent="CanvasLayer/Control"]
+z_index = 3
+layout_mode = 0
+offset_left = 21.0
+offset_top = -152.0
+offset_right = 1101.0
+offset_bottom = 928.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_vhwpv")
+
+[node name="Dogfood-sprite" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(931, 54)
+scale = Vector2(0.692632, 0.762106)
+texture = ExtResource("5_pa1iu")
+
+[node name="CancelButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -972.0
+offset_top = -118.0
+offset_right = -752.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.625339, 0.753946, 0.984999, 1)
+text = "Cancel"
+metadata/_edit_use_anchors_ = true
+
+[node name="SaveButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -118.0
+offset_right = -195.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Apply"
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsPanel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -99.0
+offset_right = 233.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeSFX" type="HSlider" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 27.0
+offset_right = 440.0
+offset_bottom = 43.0
+min_value = -10.0
+max_value = 10.0
+step = 0.5
+
+[node name="VolumeSFXLabel" type="Label" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 21.0
+offset_right = 131.0
+offset_bottom = 44.0
+text = "SFX Volume"
+
+[node name="VolumeMusic" type="HSlider" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 63.0
+offset_right = 440.0
+offset_bottom = 93.0
+min_value = -10.0
+max_value = 10.0
+step = 0.5
+
+[node name="VolumemusicLabel" type="Label" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 65.0
+offset_right = 139.0
+offset_bottom = 88.0
+text = "Music Volume"
+
+[connection signal="pressed" from="CanvasLayer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="drag_ended" from="CanvasLayer/SettingsPanel/VolumeMusic" to="." method="_on_volume_music_drag_ended"]
