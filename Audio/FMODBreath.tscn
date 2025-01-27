@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1dwgss8bggdx"]
+
+[ext_resource type="Script" path="res://Audio/fmod_breath.gd" id="1_7f07h"]
+
+[node name="FmodBreath" type="Node3D"]
+script = ExtResource("1_7f07h")
+
+[node name="BreathEmitter" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/BreathEvent"
+event_guid = "{a28455f3-0da3-46ee-9e78-31ba086973e4}"
+fmod_parameters/State/id = -8436468672577815637
+fmod_parameters/State = 0
+fmod_parameters/State/variant_type = 2
+
+[node name="BubbleEmitter" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/BubblesEvent"
+event_guid = "{76301334-7c19-453f-b5cb-99d3c88c7c65}"
+fmod_parameters/State/id = -8436468672577815637
+fmod_parameters/State = 0
+fmod_parameters/State/variant_type = 2
+
+[node name="ScaryEventEmitter" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/ScaryShit"
+event_guid = "{f77f02b9-9cc6-46d0-8c45-c069858670b0}"
+
+[node name="FmodListener3D" type="FmodListener3D" parent="."]

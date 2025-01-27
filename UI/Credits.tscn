@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctfgqfb0syl5e" path="res://UI/Image/background02.png" id="2_6wdom"]
 [ext_resource type="Shader" path="res://Intro/shader/ripple.gdshader" id="3_1vnrb"]
 [ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Intro/Textures/Don’t look back..png" id="4_2igc7"]
-[ext_resource type="PackedScene" uid="uid://cmmk31d282i46" path="res://UI/GodotCredits.tscn" id="5_718pw"]
+[ext_resource type="PackedScene" uid="uid://cskradkx3o1q2" path="res://UI/GodotCredits.tscn" id="5_718pw"]
 [ext_resource type="Texture2D" uid="uid://b041oy0smx02q" path="res://UI/Image/dogfood-sprite.png" id="5_mehft"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uwlql"]

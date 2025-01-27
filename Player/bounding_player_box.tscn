@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnyqv7dko6y5q"]
+
+[ext_resource type="Script" path="res://Scripts/bubble_spawner.gd" id="2_cbpkb"]
+[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="3_ai6ne"]
+[ext_resource type="PackedScene" uid="uid://dww1e7pwbctxq" path="res://Audio/fmod_all.tscn" id="3_so6g2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1wfr"]
+size = Vector3(0.1, 10, 10)
+
+[node name="BoundingPlayerBox" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31, 0)
+
+[node name="BubbleSpawRefPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.46215, -0.0969839)
+script = ExtResource("2_cbpkb")
+
+[node name="Timer" type="Timer" parent="BubbleSpawRefPoint"]
+process_callback = 0
+wait_time = 2.0
+autostart = true
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_ai6ne")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 5
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = true
+axis_lock_angular_z = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="RightWall" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+shape = SubResource("BoxShape3D_y1wfr")
+
+[node name="LeftWall" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+shape = SubResource("BoxShape3D_y1wfr")
+
+[node name="BottomWall" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, -3, 0)
+shape = SubResource("BoxShape3D_y1wfr")
+
+[node name="TopWall" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.074, 3, 0)
+shape = SubResource("BoxShape3D_y1wfr")
+
+[node name="Camera" type="Camera3D" parent="." groups=["Camera3D"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.79815)
+fov = 70.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.183013, 0.683013, 0, 0.965926, 0.258819, -0.707107, -0.183013, 0.683013, 0, -31, 0)
+light_color = Color(0, 0, 1, 1)
+light_energy = 2.0
+
+[node name="FMOD All" parent="." instance=ExtResource("3_so6g2")]
+
+[connection signal="timeout" from="BubbleSpawRefPoint/Timer" to="BubbleSpawRefPoint" method="_on_timer_timeout"]

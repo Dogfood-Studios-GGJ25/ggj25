@@ -3,6 +3,7 @@
 [ext_resource type="Shader" path="res://Meshes/caustics.gdshader" id="1_k76yj"]
 
 [sub_resource type="Gradient" id="Gradient_glw5r"]
+colors = PackedColorArray(0, 0, 0, 1, 0.82, 0.82, 0.82, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_80xue"]
 gradient = SubResource("Gradient_glw5r")

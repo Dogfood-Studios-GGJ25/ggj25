@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dww1e7pwbctxq"]
+
+[ext_resource type="PackedScene" uid="uid://c1dwgss8bggdx" path="res://Audio/FMODBreath.tscn" id="1_b20pj"]
+
+[node name="FMOD All" type="Node3D"]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://FMODBanks/Desktop/Master.strings.bank", "res://FMODBanks/Desktop/Master.bank"]
+
+[node name="FmodBreath" parent="FmodBankLoader" instance=ExtResource("1_b20pj")]
+unique_name_in_owner = true
+
+[node name="EnvironmentNoise" type="FmodEventEmitter3D" parent="FmodBankLoader"]
+event_name = "event:/Environment"
+event_guid = "{595b70b2-c05c-4ca6-9047-b2d94b0f9b3c}"
+autoplay = true
+volume = 0.7
