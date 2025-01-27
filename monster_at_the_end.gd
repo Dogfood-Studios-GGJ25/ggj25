@@ -14,8 +14,11 @@ func _physics_process(delta: float) -> void:
 		monster_sprite.modulate.a = lerp(monster_sprite.modulate.a, 255.0, delta * FADE_SPEED)
 		omni_light.omni_range = lerp(omni_light.omni_range, 0.0, delta * FADE_SPEED)
 		if monster_sprite.modulate.a >= 255:
-			pass
-			# play ending
+			set_process(false)
+			set_physics_process(false)
+		# wait a couple of seconds and then emit the player_death signal
+			await get_tree().create_timer(3.0).timeout
+			get_tree().change_scene_to_file("res://UI/Credits.tscn")
 		
 
 
