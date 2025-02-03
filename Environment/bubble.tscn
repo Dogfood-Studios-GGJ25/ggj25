@@ -16,6 +16,7 @@ material = SubResource("StandardMaterial3D_0lcnm")
 
 [node name="Bubble" type="RigidBody3D" groups=["Bubble"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4244, 0)
+top_level = true
 axis_lock_linear_z = true
 script = ExtResource("1_eqqc2")
 
