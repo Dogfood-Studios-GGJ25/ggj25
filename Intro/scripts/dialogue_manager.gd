@@ -22,6 +22,10 @@ func _ready():
 	# Create a delay before starting the timeline
 	await get_tree().create_timer(5.0).timeout
 	Dialogic.start('introtimeline')
+	
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("skip"):
+		change_scene()
 
 func _on_dialogic_signal(argument: String):
 	if audio_dict.has(argument):
