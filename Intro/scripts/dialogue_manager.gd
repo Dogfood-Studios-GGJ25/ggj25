@@ -20,11 +20,12 @@ func _ready():
 	cover.visible = false
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	# Create a delay before starting the timeline
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	Dialogic.start('introtimeline')
 	
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("skip"):
+		Dialogic.end_timeline()
 		change_scene()
 
 func _on_dialogic_signal(argument: String):
@@ -40,15 +41,17 @@ func _on_dialogic_signal(argument: String):
 			await get_tree().create_timer(1.0).timeout
 			audioplayer.stream = audio_dict["boom"]
 			audioplayer.play()
+			BGMusic.play_main_music()
 			ripple.visible = true
 			title.visible = true
 			await get_tree().create_timer(5.0).timeout
-			
-			BGMusic.play_main_music()
-			# Add scene transition here
 			change_scene()
 	else:
 		print("Error: No audio file found for", argument)
 
 func change_scene():
+	# Add scene transition here
+	if(!Dialogic.timeline_ended):
+		Dialogic.end_timeline()
+	BGMusic.play_main_music()
 	get_tree().change_scene_to_packed(next_scene)
