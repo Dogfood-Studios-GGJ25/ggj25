@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvhat66qqib7h"]
 
-[ext_resource type="PackedScene" uid="uid://tvy3kvtneni8" path="res://divinglevel.tscn" id="1_pcfe6"]
+[ext_resource type="PackedScene" uid="uid://tvy3kvtneni8" path="res://Scenes/SeaFloor/divinglevel.tscn" id="1_1ua3g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e4ntq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,7 +26,7 @@ volumetric_fog_ambient_inject = 1.15
 
 [node name="Seafloor" type="Node3D"]
 
-[node name="divinglevel" parent="." instance=ExtResource("1_pcfe6")]
+[node name="divinglevel" parent="." instance=ExtResource("1_1ua3g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4128, 0, 4.97534)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

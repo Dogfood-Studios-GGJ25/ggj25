@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Scenes/Intro/Textures/Don’t look back..png" id="4_2igc7"]
 [ext_resource type="PackedScene" uid="uid://cskradkx3o1q2" path="res://Scenes/Credits/GodotCredits.tscn" id="5_718pw"]
 [ext_resource type="Texture2D" uid="uid://b041oy0smx02q" path="res://Assets/Logos/dogfood-sprite.png" id="5_mehft"]
-[ext_resource type="PackedScene" uid="uid://7gn6yp03122k" path="res://Scenes/Main.tscn" id="7_7t2h6"]
+[ext_resource type="PackedScene" uid="uid://7gn6yp03122k" path="res://Scenes/main.tscn" id="7_7t2h6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uwlql"]
 shader = ExtResource("3_1vnrb")

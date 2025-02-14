@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxm1i1dlo51xl"
-path.s3tc="res://.godot/imported/littleFish.png-30f72a26923df3e8312cc9dfef7389be.s3tc.ctex"
+path.s3tc="res://.godot/imported/littleFish.png-0d73276228f34b0dd0c3b4a240831c7c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://littleFish.png"
-dest_files=["res://.godot/imported/littleFish.png-30f72a26923df3e8312cc9dfef7389be.s3tc.ctex"]
+source_file="res://Scenes/Level/littleFish.png"
+dest_files=["res://.godot/imported/littleFish.png-0d73276228f34b0dd0c3b4a240831c7c.s3tc.ctex"]
 
 [params]
 
