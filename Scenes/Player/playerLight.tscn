@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7vlwpvuqj7a2"]
 
-[ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_q22rq"]
-[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Scenes/Player/player.tscn" id="3_g0sld"]
+[ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_xn84g"]
+[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Scenes/Player/player.tscn" id="2_7iw4c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yugyq"]
 
@@ -10,7 +10,7 @@ albedo_color = Color(0.777446, 0, 0.00090765, 1)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_q22rq")]
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_xn84g")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -26,4 +26,5 @@ gi_mode = 2
 mesh = SubResource("BoxMesh_yugyq")
 surface_material_override/0 = SubResource("StandardMaterial3D_v3yyc")
 
-[node name="Player" parent="." instance=ExtResource("3_g0sld")]
+[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_7iw4c")]
+camera = NodePath("../Camera3D")

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6lcbm4dai2x5"]
-
-[ext_resource type="Texture2D" uid="uid://bg0vqcbl6u8if" path="res://small_fish.png" id="1_fj4gs"]
-[ext_resource type="Script" path="res://smallfish.gd" id="2_phm4q"]
-
-[node name="Sprite2D" type="Sprite2D"]
-position = Vector2(562, 296)
-texture = ExtResource("1_fj4gs")
-script = ExtResource("2_phm4q")
