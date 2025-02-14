@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://ds2x5oq5ienrx"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_iijgt"]
-[ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Flashlight.tscn" id="2_pb1ki"]
+[ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Scenes/Flashlight/Flashlight.tscn" id="2_pb1ki"]
 [ext_resource type="Shader" path="res://Assets/Bubble_effect/bubble.gdshader" id="2_y6wap"]
 [ext_resource type="PackedScene" uid="uid://bvna3mye4h53x" path="res://Assets/Astronaut/cute_astronaut.glb" id="4_6rwag"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnyqv7dko6y5q"]
 
-[ext_resource type="Script" path="res://Scripts/bubble_spawner.gd" id="2_cbpkb"]
+[ext_resource type="Script" path="res://Scenes/Player/bubble_spawner.gd" id="2_cbpkb"]
 [ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Scenes/Player/player.tscn" id="3_ai6ne"]
 [ext_resource type="PackedScene" uid="uid://dww1e7pwbctxq" path="res://Audio/fmod_all.tscn" id="3_so6g2"]
 [ext_resource type="PackedScene" uid="uid://m4xfnewg2cn3" path="res://Scenes/Enemy/Enemy spawner.tscn" id="4_1w0h8"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqutocqv35hbb"]
 
-[ext_resource type="Script" path="res://Scripts/spot_light_3d.gd" id="1_rvwew"]
+[ext_resource type="Script" path="res://Scenes/Flashlight/spot_light_3d.gd" id="1_7jc4j"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_qg4md"]
 
@@ -15,7 +15,7 @@ shadow_enabled = true
 distance_fade_enabled = true
 spot_range = 8.0
 spot_angle = 30.0
-script = ExtResource("1_rvwew")
+script = ExtResource("1_7jc4j")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
