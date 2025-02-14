@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var enemy = preload("res://Enemy/Enemy.tscn")
+@onready var enemy = preload("res://Scenes/Enemy/Enemy.tscn")
 var spawn_radius = 5.0
 var spawn_distance = 8.0
 var spawn_timer: Timer

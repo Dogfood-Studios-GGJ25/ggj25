@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/bubble_spawner.gd" id="2_cbpkb"]
 [ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="3_ai6ne"]
 [ext_resource type="PackedScene" uid="uid://dww1e7pwbctxq" path="res://Audio/fmod_all.tscn" id="3_so6g2"]
-[ext_resource type="PackedScene" uid="uid://m4xfnewg2cn3" path="res://Enemy/Enemy spawner.tscn" id="4_1w0h8"]
+[ext_resource type="PackedScene" uid="uid://m4xfnewg2cn3" path="res://Scenes/Enemy/Enemy spawner.tscn" id="4_1w0h8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1wfr"]
 size = Vector3(0.1, 10, 10)
