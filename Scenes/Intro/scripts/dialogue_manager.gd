@@ -14,7 +14,7 @@ var audio_dict = {
 	"beintouch": preload("res://Scenes/Intro/audio/be in touch.mp3"),
 	"boom": preload("res://Scenes/Intro/audio/boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3")}
 
-@onready var next_scene = preload("res://leveldesign.tscn")
+@onready var next_scene = preload("res://Scenes/Level/leveldesign.tscn")
 
 func _ready():
 	cover.visible = false

@@ -1,9 +1,9 @@
 [gd_scene load_steps=49 format=4 uid="uid://jv1lxee8i1an"]
 
-[ext_resource type="Script" path="res://LevelScripts/leveldesign.gd" id="1_1gpiy"]
-[ext_resource type="Script" path="res://game_ender.gd" id="1_836wd"]
+[ext_resource type="Script" path="res://Scenes/Level/leveldesign.gd" id="1_1gpiy"]
+[ext_resource type="Script" path="res://Scenes/Level/game_ender.gd" id="1_836wd"]
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_ucrc6"]
-[ext_resource type="Script" path="res://Scripts/particles.gd" id="2_75p1g"]
+[ext_resource type="Script" path="res://Scenes/Level/particles.gd" id="2_75p1g"]
 [ext_resource type="PackedScene" uid="uid://cc20ff53teico" path="res://Meshes/preparedrock1.tscn" id="2_mkl5d"]
 [ext_resource type="Script" path="res://Environment/FogController.gd" id="3_pf0ni"]
 [ext_resource type="PackedScene" uid="uid://cwhrr5vxmekiu" path="res://Meshes/preparedrock2.tscn" id="3_sl5a2"]

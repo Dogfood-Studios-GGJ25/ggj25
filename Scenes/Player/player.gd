@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @export var oxygen_level : int = 100
 @export var flashlight_level : int = 100
+@export var camera : Camera3D
 
 signal player_death
 
@@ -19,14 +20,12 @@ const TERMINAL_VELOCITY = -0.5
 var current_speed_x: float = 0.0
 var current_speed_y: float = 0.0
 var gravity_velocity: float = 0.0 
-var camera
 
 var spotlight_state: bool = false
 
 signal flashlight_detect(object)
 
 func _ready():
-	camera = $Camera3D
 	update_o2_label()
 
 func _process(delta: float) -> void:

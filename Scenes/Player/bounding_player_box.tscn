@@ -20,7 +20,7 @@ process_callback = 0
 wait_time = 2.0
 autostart = true
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_ai6ne")]
+[node name="Player" parent="." node_paths=PackedStringArray("camera") groups=["Player"] instance=ExtResource("3_ai6ne")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 collision_layer = 5
@@ -28,6 +28,7 @@ axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = true
 axis_lock_angular_z = true
+camera = NodePath("../Camera")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
