@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d1kv872rstbdn" path="res://rockeyelids.tscn" id="9_8idos"]
 [ext_resource type="Material" uid="uid://ck18nbes0vtha" path="res://Meshes/sandbank.tres" id="11_uns7d"]
 [ext_resource type="PackedScene" uid="uid://6v4pue7yj1ce" path="res://Scenes/Squid/Squid.tscn" id="12_wrj87"]
-[ext_resource type="Texture2D" uid="uid://cd2b2fey14tmb" path="res://Textures/Eldritch being at the bottom of the sea.png" id="17_6eb1a"]
+[ext_resource type="Texture2D" uid="uid://cd2b2fey14tmb" path="res://Assets/Textures/Eldritch being at the bottom of the sea.png" id="17_6eb1a"]
 [ext_resource type="Material" path="res://Meshes/marble.tres" id="17_aiyd4"]
 [ext_resource type="Texture2D" uid="uid://dxm1i1dlo51xl" path="res://littleFish.png" id="17_lh2ux"]
 [ext_resource type="Script" path="res://littleFish_3d.gd" id="18_2a2xo"]

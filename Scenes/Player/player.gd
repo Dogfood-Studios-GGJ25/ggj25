@@ -26,7 +26,7 @@ var spotlight_state: bool = false
 signal flashlight_detect(object)
 
 func _ready():
-	camera = get_tree().get_first_node_in_group("Camera3D")
+	camera = $Camera3D
 	update_o2_label()
 
 func _process(delta: float) -> void:

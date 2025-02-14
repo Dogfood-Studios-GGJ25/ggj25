@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cndvi0d6a8f5v"]
 
 [ext_resource type="Shader" path="res://Environment/sky.gdshader" id="1_0x1fv"]
-[ext_resource type="Texture2D" uid="uid://bqji37df41fxy" path="res://Textures/water-424807_1280.jpg" id="2_2dfcc"]
+[ext_resource type="Texture2D" uid="uid://bqji37df41fxy" path="res://Assets/Textures/water-424807_1280.jpg" id="2_2dfcc"]
 
 [sub_resource type="Gradient" id="Gradient_jgbl0"]
 offsets = PackedFloat32Array(0, 0.990083)

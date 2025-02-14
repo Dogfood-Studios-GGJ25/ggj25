@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfmyh0eg0tb2y"]
 
-[ext_resource type="Texture2D" uid="uid://bw55ceol5nl0u" path="res://Textures/lookup.png" id="1_etegl"]
-[ext_resource type="Texture2D" uid="uid://14iakvuqagwx" path="res://Textures/lookright.png" id="2_ol37a"]
-[ext_resource type="Texture2D" uid="uid://hilxecywdknm" path="res://Textures/lookleft.png" id="3_iteql"]
-[ext_resource type="Texture2D" uid="uid://bo81e8wpwnalh" path="res://Textures/openeye.png" id="4_vy35e"]
+[ext_resource type="Texture2D" uid="uid://bw55ceol5nl0u" path="res://Assets/Textures/lookup.png" id="1_etegl"]
+[ext_resource type="Texture2D" uid="uid://14iakvuqagwx" path="res://Assets/Textures/lookright.png" id="2_ol37a"]
+[ext_resource type="Texture2D" uid="uid://hilxecywdknm" path="res://Assets/Textures/lookleft.png" id="3_iteql"]
+[ext_resource type="Texture2D" uid="uid://bo81e8wpwnalh" path="res://Assets/Textures/openeye.png" id="4_vy35e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g46mr"]
 
