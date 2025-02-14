@@ -5,14 +5,14 @@ extends Node
 @onready var title = $"../Control/Title"
 @onready var ripple = $"../Control/Ripple Shader"
 var audio_dict = {
-	"hey": preload("res://Intro/audio/hey.mp3"),
-	"listen": preload("res://Intro/audio/listen.mp3"),
-	"youready1": preload("res://Intro/audio/you ready 1.mp3"),
-	"youready2": preload("res://Intro/audio/you ready 2.mp3"),
-	"splash": preload("res://Intro/audio/water-splash-199583.mp3"),
-	"formality": preload("res://Intro/audio/formality.mp3"),
-	"beintouch": preload("res://Intro/audio/be in touch.mp3"),
-	"boom": preload("res://Intro/audio/boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3")}
+	"hey": preload("res://Scenes/Intro/audio/hey.mp3"),
+	"listen": preload("res://Scenes/Intro/audio/listen.mp3"),
+	"youready1": preload("res://Scenes/Intro/audio/you ready 1.mp3"),
+	"youready2": preload("res://Scenes/Intro/audio/you ready 2.mp3"),
+	"splash": preload("res://Scenes/Intro/audio/water-splash-199583.mp3"),
+	"formality": preload("res://Scenes/Intro/audio/formality.mp3"),
+	"beintouch": preload("res://Scenes/Intro/audio/be in touch.mp3"),
+	"boom": preload("res://Scenes/Intro/audio/boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3")}
 
 @onready var next_scene = preload("res://leveldesign.tscn")
 

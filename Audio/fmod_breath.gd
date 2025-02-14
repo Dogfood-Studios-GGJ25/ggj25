@@ -43,7 +43,7 @@ func SetStressLevel(level: int) -> void:
 	stress = level
 	
 func OnOxygenChanged(oxygen_level: int) -> void:
-	print("oxy = ", oxygen_level)
+	#print("oxy = ", oxygen_level)
 	if oxygen_level == 0:
 		breathState = 2
 	if oxygen_level < 10:

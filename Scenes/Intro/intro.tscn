@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxa4fm4sfgbio"]
 
-[ext_resource type="Script" path="res://Intro/scripts/dialogue_manager.gd" id="1_7bagw"]
-[ext_resource type="Shader" path="res://Intro/shader/plasma.gdshader" id="1_osok2"]
-[ext_resource type="Shader" path="res://Intro/shader/ripple.gdshader" id="2_j6ti5"]
-[ext_resource type="AudioStream" uid="uid://bdqspj7kvl20t" path="res://Intro/audio/underwater-ambience-6201.mp3" id="3_oep3h"]
-[ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Intro/Textures/Don’t look back..png" id="3_qq5pb"]
+[ext_resource type="Script" path="res://Scenes/Intro/scripts/dialogue_manager.gd" id="1_7bagw"]
+[ext_resource type="Shader" path="res://Scenes/Intro/shader/plasma.gdshader" id="1_osok2"]
+[ext_resource type="Shader" path="res://Scenes/Intro/shader/ripple.gdshader" id="2_j6ti5"]
+[ext_resource type="AudioStream" uid="uid://bdqspj7kvl20t" path="res://Scenes/Intro/audio/underwater-ambience-6201.mp3" id="3_oep3h"]
+[ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Scenes/Intro/Textures/Don’t look back..png" id="3_qq5pb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lbqlp"]
 shader = ExtResource("2_j6ti5")

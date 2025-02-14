@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdb42xcs114l6"
+path="res://.godot/imported/you ready 2.mp3-7067e461b6f06fed5b23cdda2032b33b.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Intro/audio/you ready 2.mp3"
+dest_files=["res://.godot/imported/you ready 2.mp3-7067e461b6f06fed5b23cdda2032b33b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

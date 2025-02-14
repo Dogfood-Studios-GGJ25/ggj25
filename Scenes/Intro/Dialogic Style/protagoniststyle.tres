@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://bhxogyr127ydx"]
 
-[ext_resource type="Resource" uid="uid://dce0li5qca4lr" path="res://Intro/Dialogic Style/styleforintro.tres" id="1_dusxb"]
+[ext_resource type="Resource" uid="uid://dce0li5qca4lr" path="res://Scenes/Intro/Dialogic Style/styleforintro.tres" id="1_dusxb"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_78yru"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_ug8s0"]
 

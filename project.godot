@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="GGJ25_Dogfood_Studios"
-run/main_scene="res://UI/StartScreen.tscn"
+run/main_scene="res://UI/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=3
@@ -44,12 +44,12 @@ SignalBus="*res://signal_bus.gd"
 [dialogic]
 
 directories/dch_directory={
-"protagonist": "res://Intro/Dialogic Characters/protagonist.dch",
+"protagonist": "res://Scenes/Intro/Dialogic Characters/protagonist.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch",
-"walkie talkie voice": "res://Intro/Dialogic Characters/walkie talkie voice.dch"
+"walkie talkie voice": "res://Scenes/Intro/Dialogic Characters/walkie talkie voice.dch"
 }
 directories/dtl_directory={
-"introtimeline": "res://Intro/Timelines/introtimeline.dtl"
+"introtimeline": "res://Scenes/Intro/Timelines/introtimeline.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

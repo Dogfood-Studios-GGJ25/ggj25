@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_13qib"]
 [ext_resource type="Texture2D" uid="uid://ctfgqfb0syl5e" path="res://UI/Image/background02.png" id="2_qtvcn"]
-[ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Intro/Textures/Don’t look back..png" id="3_vmdqo"]
-[ext_resource type="Shader" path="res://Intro/shader/ripple.gdshader" id="4_lacr4"]
+[ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Scenes/Intro/Textures/Don’t look back..png" id="3_vmdqo"]
+[ext_resource type="Shader" path="res://Scenes/Intro/shader/ripple.gdshader" id="4_lacr4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uwlql"]
 shader = ExtResource("4_lacr4")
@@ -12,6 +12,7 @@ shader_parameter/speed = 2.0
 shader_parameter/height = 0.001
 
 [node name="StartScreen" type="Node2D"]
+visible = false
 script = ExtResource("1_13qib")
 metadata/_edit_vertical_guides_ = [958.0, 178.0]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjs38khsdrksv"
+path="res://.godot/imported/be in touch.mp3-a53818287662021e5163727323ccffcc.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Intro/audio/be in touch.mp3"
+dest_files=["res://.godot/imported/be in touch.mp3-a53818287662021e5163727323ccffcc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
