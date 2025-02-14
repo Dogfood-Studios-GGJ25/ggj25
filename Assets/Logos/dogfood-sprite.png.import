@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctfgqfb0syl5e"
-path="res://.godot/imported/background02.png-1002631ff2c968c79c44f5fa4ec0a58d.ctex"
+uid="uid://b041oy0smx02q"
+path="res://.godot/imported/dogfood-sprite.png-d3d7f47e12f69f73e4c2d8dec9277523.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Image/background02.png"
-dest_files=["res://.godot/imported/background02.png-1002631ff2c968c79c44f5fa4ec0a58d.ctex"]
+source_file="res://Assets/Logos/dogfood-sprite.png"
+dest_files=["res://.godot/imported/dogfood-sprite.png-d3d7f47e12f69f73e4c2d8dec9277523.ctex"]
 
 [params]
 
