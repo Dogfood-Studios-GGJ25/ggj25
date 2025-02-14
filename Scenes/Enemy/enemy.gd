@@ -16,6 +16,5 @@ func _process(delta: float) -> void:
 	var direction = (target_position - position).normalized()
 	position += direction * speed * delta
 
-
 func _on_object_detected(object: Object) -> void:
 	queue_free()

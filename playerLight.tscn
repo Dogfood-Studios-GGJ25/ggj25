@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7vlwpvuqj7a2"]
 
 [ext_resource type="PackedScene" uid="uid://cndvi0d6a8f5v" path="res://Environment/world_environment.tscn" id="1_q22rq"]
-[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Player/player.tscn" id="3_g0sld"]
+[ext_resource type="PackedScene" uid="uid://ds2x5oq5ienrx" path="res://Scenes/Player/player.tscn" id="3_g0sld"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yugyq"]
 
