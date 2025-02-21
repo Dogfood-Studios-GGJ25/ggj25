@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ntaore3leh7"]
+[gd_scene load_steps=5 format=3 uid="uid://ntaore3leh7"]
 
 [ext_resource type="Texture2D" uid="uid://ylgw0c5qq010" path="res://Assets/UI/icons8-settings-50.png" id="1_kx62p"]
 [ext_resource type="Script" path="res://Scenes/Settings/Settings.gd" id="2_vk4sf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3eb43"]
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wahew"]
+font_size = 32
 
 [node name="SettingsButton" type="TextureButton"]
 offset_left = 1088.0
@@ -12,8 +18,85 @@ texture_normal = ExtResource("1_kx62p")
 script = ExtResource("2_vk4sf")
 
 [node name="SettingsPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -823.0
+offset_top = -433.0
+offset_right = -200.0
+offset_bottom = -87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3eb43")
+
+[node name="TitleLabel" type="Label" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_right = 62.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_wahew")
+
+[node name="MusicVolLabel" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 139.0
+offset_right = 171.0
+offset_bottom = 162.0
+text = "Music Volume
+"
+
+[node name="SFXVolLabel" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 181.0
+offset_right = 171.0
+offset_bottom = 204.0
+text = "SFX Volume
+"
+
+[node name="InvYLabel" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 223.0
+offset_right = 171.0
+offset_bottom = 246.0
+text = "Invert Y-axis"
+
+[node name="MusicVolSlider" type="HSlider" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 130.0
+offset_right = 574.0
+offset_bottom = 169.0
+step = 5.0
+value = 50.0
+
+[node name="SFXVolSlider" type="HSlider" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 178.0
+offset_right = 574.0
+offset_bottom = 217.0
+step = 5.0
+value = 50.0
+
+[node name="InvYCheck" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 227.0
+offset_right = 325.0
+offset_bottom = 251.0
+
+[node name="CloseButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 281.0
+offset_right = 594.0
+offset_bottom = 324.0
+text = "Close
+"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="SettingsPanel/CloseButton" to="." method="_on_close_button_pressed"]
