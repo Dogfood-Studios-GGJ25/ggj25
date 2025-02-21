@@ -99,4 +99,6 @@ text = "Close
 "
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="value_changed" from="SettingsPanel/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
 [connection signal="pressed" from="SettingsPanel/CloseButton" to="." method="_on_close_button_pressed"]
