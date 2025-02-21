@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://7gn6yp03122k"]
+[gd_scene load_steps=8 format=3 uid="uid://7gn6yp03122k"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_67c6e"]
 [ext_resource type="Texture2D" uid="uid://ctfgqfb0syl5e" path="res://Assets/Backgrounds/background02.png" id="2_ym3ut"]
 [ext_resource type="Shader" path="res://Scenes/Intro/shader/ripple.gdshader" id="3_n6fvr"]
 [ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Scenes/Intro/Textures/Don’t look back..png" id="4_5bbjj"]
+[ext_resource type="Texture2D" uid="uid://ylgw0c5qq010" path="res://Assets/UI/icons8-settings-50.png" id="5_om7d8"]
+[ext_resource type="Script" path="res://Scenes/Settings/Settings.gd" id="6_d2nsx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uwlql"]
 shader = ExtResource("3_n6fvr")
@@ -104,6 +106,20 @@ size_flags_vertical = 4
 text = "Credits"
 metadata/_edit_use_anchors_ = true
 
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1088.0
+offset_top = 585.0
+offset_right = 1138.0
+offset_bottom = 635.0
+texture_normal = ExtResource("5_om7d8")
+script = ExtResource("6_d2nsx")
+
+[node name="SettingsPanel" type="Panel" parent="CanvasLayer/SettingsButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="CanvasLayer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsButton" to="CanvasLayer/SettingsButton" method="_on_pressed"]
