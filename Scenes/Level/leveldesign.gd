@@ -4,7 +4,6 @@ extends Node3D
 @onready var player: Node3D = get_tree().get_first_node_in_group("Player")
 @onready var camera: Node3D = get_tree().get_first_node_in_group("Camera3D")
 
-
 var SCROLL_SPEED = 1.0
 
 # Called when the node enters the scene tree for the first time.

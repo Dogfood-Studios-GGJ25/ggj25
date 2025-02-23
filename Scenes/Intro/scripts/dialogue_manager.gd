@@ -4,6 +4,10 @@ extends Node
 @onready var cover = $"../Control/black cover"
 @onready var title = $"../Control/Title"
 @onready var ripple = $"../Control/Ripple Shader"
+@onready var voice_audio = $"../VoicePlayer"
+@onready var ocean_audio = $"../OceanSoundPlayer"
+
+
 var audio_dict = {
 	"hey": preload("res://Scenes/Intro/audio/hey.mp3"),
 	"listen": preload("res://Scenes/Intro/audio/listen.mp3"),
@@ -19,8 +23,10 @@ var audio_dict = {
 func _ready():
 	cover.visible = false
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	SignalBus.sfx_volume_changed.connect(sfx_volume_changed)
+	
 	# Create a delay before starting the timeline
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	Dialogic.start('introtimeline')
 	
 func _process(delta: float) -> void:
@@ -48,6 +54,10 @@ func _on_dialogic_signal(argument: String):
 			change_scene()
 	else:
 		print("Error: No audio file found for", argument)
+
+func sfx_volume_changed(new_value):
+	voice_audio.volume_db = linear_to_db(new_value)
+	ocean_audio.volume_db = linear_to_db(new_value)
 
 func change_scene():
 	# Add scene transition here

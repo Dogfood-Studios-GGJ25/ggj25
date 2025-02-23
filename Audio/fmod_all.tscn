@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dww1e7pwbctxq"]
+[gd_scene load_steps=3 format=3 uid="uid://dww1e7pwbctxq"]
 
 [ext_resource type="PackedScene" uid="uid://c1dwgss8bggdx" path="res://Audio/FMODBreath.tscn" id="1_b20pj"]
+[ext_resource type="Script" path="res://Audio/fmod_all.gd" id="1_xegco"]
 
 [node name="FMOD All" type="Node3D"]
+script = ExtResource("1_xegco")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://FMODBanks/Desktop/Master.strings.bank", "res://FMODBanks/Desktop/Master.bank"]

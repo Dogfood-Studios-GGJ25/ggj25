@@ -53,6 +53,3 @@ func stop_all_music():
 
 func volume_changed(new_value):
 	var db_value = linear_to_db(new_value)
-	print(FmodServer.get_all_buses().size())
-	
-	# bus.set_volume(new_value)

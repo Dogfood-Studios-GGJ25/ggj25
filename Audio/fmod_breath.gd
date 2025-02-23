@@ -8,6 +8,7 @@ var ScaryTimer = 0
 
 func _ready():
 	SignalBus.Oxygen_Changed.connect(OnOxygenChanged)
+	SignalBus.sfx_volume_changed.connect(VolumeChanged)
 
 func _process(delta: float) -> void:
 	timer += delta
@@ -41,6 +42,12 @@ func DecreaseStress() -> void:
 	
 func SetStressLevel(level: int) -> void:
 	stress = level
+	
+func VolumeChanged(new_value) -> void:
+	var db_value = linear_to_db(new_value)
+	$BreathEmitter.volume = db_value
+	$BubbleEmitter.volume = db_value
+	$ScaryEventEmitter.volume = db_value
 	
 func OnOxygenChanged(oxygen_level: int) -> void:
 	print("oxy = ", oxygen_level)
