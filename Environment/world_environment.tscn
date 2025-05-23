@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cndvi0d6a8f5v"]
 
-[ext_resource type="Shader" path="res://Environment/sky.gdshader" id="1_0x1fv"]
+[ext_resource type="Shader" uid="uid://34dm3b5l4jr4" path="res://Environment/sky.gdshader" id="1_0x1fv"]
 [ext_resource type="Texture2D" uid="uid://bqji37df41fxy" path="res://Assets/Textures/water-424807_1280.jpg" id="2_2dfcc"]
 
 [sub_resource type="Gradient" id="Gradient_jgbl0"]
@@ -13,15 +13,15 @@ use_hdr = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_whblb"]
 shader = ExtResource("1_0x1fv")
+shader_parameter/sky_tex = ExtResource("2_2dfcc")
 shader_parameter/energy = 4.5
 shader_parameter/gamma = 1.942
+shader_parameter/tint_ramp = SubResource("GradientTexture2D_5euan")
 shader_parameter/scale = Vector3(-0.3, 0.41, 0.705)
 shader_parameter/triplanar_blend_power = 6.076
 shader_parameter/seamless_blend = 0.5
 shader_parameter/movement_speed = 0.03
 shader_parameter/movement_direction = Vector2(1, 0.5)
-shader_parameter/sky_tex = ExtResource("2_2dfcc")
-shader_parameter/tint_ramp = SubResource("GradientTexture2D_5euan")
 
 [sub_resource type="Sky" id="Sky_ypve0"]
 sky_material = SubResource("ShaderMaterial_whblb")

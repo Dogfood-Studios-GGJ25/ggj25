@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqutocqv35hbb"]
 
-[ext_resource type="Script" path="res://Scenes/Flashlight/spot_light_3d.gd" id="1_7jc4j"]
+[ext_resource type="Script" uid="uid://3bhdegkkw3lm" path="res://Scenes/Flashlight/spot_light_3d.gd" id="1_7jc4j"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_qg4md"]
 

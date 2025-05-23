@@ -31,6 +31,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
+	if Input.is_action_just_pressed("Open Settings"):
+		SignalBus.open_settings.emit
 
 func _physics_process(delta: float) -> void:
 # Spotlight looking at mouse position

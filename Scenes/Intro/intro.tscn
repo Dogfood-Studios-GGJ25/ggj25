@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxa4fm4sfgbio"]
 
-[ext_resource type="Script" path="res://Scenes/Intro/scripts/dialogue_manager.gd" id="1_7bagw"]
-[ext_resource type="Shader" path="res://Scenes/Intro/shader/plasma.gdshader" id="1_osok2"]
-[ext_resource type="Shader" path="res://Scenes/Intro/shader/ripple.gdshader" id="2_j6ti5"]
+[ext_resource type="Script" uid="uid://c8t0gno0e4bwv" path="res://Scenes/Intro/scripts/dialogue_manager.gd" id="1_7bagw"]
+[ext_resource type="Shader" uid="uid://o4qbvww2c5ee" path="res://Scenes/Intro/shader/plasma.gdshader" id="1_osok2"]
+[ext_resource type="Shader" uid="uid://bbwi5mgrykfj4" path="res://Scenes/Intro/shader/ripple.gdshader" id="2_j6ti5"]
 [ext_resource type="AudioStream" uid="uid://bdqspj7kvl20t" path="res://Scenes/Intro/audio/underwater-ambience-6201.mp3" id="3_oep3h"]
 [ext_resource type="Texture2D" uid="uid://bxs8lecd87imx" path="res://Scenes/Intro/Textures/Don’t look back..png" id="3_qq5pb"]
 
@@ -80,10 +80,10 @@ position = Vector2(578, 327)
 
 [node name="VoicePlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_ltpyp")
-volume_db = 2.477
+volume_db = -5.0
 
 [node name="OceanSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_oep3h")
-volume_db = 14.857
+volume_db = -10.0
 autoplay = true
 parameters/looping = false

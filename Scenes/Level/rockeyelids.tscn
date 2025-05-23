@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1kv872rstbdn"]
 
-[ext_resource type="Script" path="res://Scenes/Level/rockeyelids.gd" id="1_6h8r8"]
+[ext_resource type="Script" uid="uid://bj5hu28tkwsf4" path="res://Scenes/Level/rockeyelids.gd" id="1_6h8r8"]
 [ext_resource type="PackedScene" uid="uid://cc20ff53teico" path="res://Meshes/preparedrock1.tscn" id="2_bq02w"]
 [ext_resource type="PackedScene" uid="uid://5speyvvxxkba" path="res://Meshes/preparedrock3.tscn" id="3_s6eys"]
 

@@ -7,7 +7,6 @@ extends Node
 @onready var voice_audio = $"../VoicePlayer"
 @onready var ocean_audio = $"../OceanSoundPlayer"
 
-
 var audio_dict = {
 	"hey": preload("res://Scenes/Intro/audio/hey.mp3"),
 	"listen": preload("res://Scenes/Intro/audio/listen.mp3"),

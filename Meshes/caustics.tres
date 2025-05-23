@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://i5blojmqb88v"]
 
-[ext_resource type="Shader" path="res://Meshes/caustics.gdshader" id="1_k76yj"]
+[ext_resource type="Shader" uid="uid://c3yg17ytdbslc" path="res://Meshes/caustics.gdshader" id="1_k76yj"]
 
 [sub_resource type="Gradient" id="Gradient_glw5r"]
 colors = PackedColorArray(0, 0, 0, 1, 0.82, 0.82, 0.82, 1)

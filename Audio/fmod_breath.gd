@@ -44,10 +44,9 @@ func SetStressLevel(level: int) -> void:
 	stress = level
 	
 func VolumeChanged(new_value) -> void:
-	var db_value = linear_to_db(new_value)
-	$BreathEmitter.volume = db_value
-	$BubbleEmitter.volume = db_value
-	$ScaryEventEmitter.volume = db_value
+	$BreathEmitter.volume = new_value
+	$BubbleEmitter.volume = new_value
+	$ScaryEventEmitter.volume = new_value
 	
 func OnOxygenChanged(oxygen_level: int) -> void:
 	print("oxy = ", oxygen_level)

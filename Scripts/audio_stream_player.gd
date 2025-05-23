@@ -14,7 +14,7 @@ var global_sfx_volume : float :
 	get:
 		return global_sfx_volume
 	set(value):
-		global_music_volume = value		
+		global_sfx_volume = value		
 		
 func _ready() -> void:
 	SignalBus.music_volume_changed.connect(set_music_volume)
@@ -53,3 +53,4 @@ func stop_all_music():
 
 func volume_changed(new_value):
 	var db_value = linear_to_db(new_value)
+	global_sfx_volume = db_value

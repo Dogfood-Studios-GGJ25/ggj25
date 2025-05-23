@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dww1e7pwbctxq"]
 
 [ext_resource type="PackedScene" uid="uid://c1dwgss8bggdx" path="res://Audio/FMODBreath.tscn" id="1_b20pj"]
-[ext_resource type="Script" path="res://Audio/fmod_all.gd" id="1_xegco"]
+[ext_resource type="Script" uid="uid://cmydbpxyq88dw" path="res://Audio/fmod_all.gd" id="1_xegco"]
 
 [node name="FMOD All" type="Node3D"]
 script = ExtResource("1_xegco")
@@ -16,4 +16,4 @@ unique_name_in_owner = true
 event_name = "event:/Environment"
 event_guid = "{595b70b2-c05c-4ca6-9047-b2d94b0f9b3c}"
 autoplay = true
-volume = 0.7
+volume = 0.3

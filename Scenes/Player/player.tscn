@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://ds2x5oq5ienrx"]
 
-[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_iijgt"]
+[ext_resource type="Script" uid="uid://csvvohvodx8ak" path="res://Scenes/Player/player.gd" id="1_iijgt"]
 [ext_resource type="PackedScene" uid="uid://bqutocqv35hbb" path="res://Scenes/Flashlight/Flashlight.tscn" id="2_pb1ki"]
-[ext_resource type="Shader" path="res://Assets/Bubble_effect/bubble.gdshader" id="2_y6wap"]
+[ext_resource type="Shader" uid="uid://b16k8pveomlhh" path="res://Assets/Bubble_effect/bubble.gdshader" id="2_y6wap"]
 [ext_resource type="PackedScene" uid="uid://bvna3mye4h53x" path="res://Assets/Astronaut/cute_astronaut.glb" id="4_6rwag"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ha2lk"]
@@ -30,12 +30,12 @@ render_priority = 0
 shader = ExtResource("2_y6wap")
 shader_parameter/distortionView = 0.01
 shader_parameter/speedView = 0.01
+shader_parameter/noiseViewX = SubResource("NoiseTexture2D_t45b3")
+shader_parameter/noiseViewY = SubResource("NoiseTexture2D_sdrnk")
 shader_parameter/tintColor = Color(0.241156, 0.241156, 0.241156, 1)
 shader_parameter/fesnelAmount = 0.8
 shader_parameter/distortionVertex = 0.05
 shader_parameter/speedVertex = 0.08
-shader_parameter/noiseViewX = SubResource("NoiseTexture2D_t45b3")
-shader_parameter/noiseViewY = SubResource("NoiseTexture2D_sdrnk")
 shader_parameter/noiseVertex = SubResource("NoiseTexture2D_tknqs")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m0iwr"]
@@ -43,8 +43,8 @@ render_priority = 0
 shader = ExtResource("2_y6wap")
 shader_parameter/distortionView = 0.03
 shader_parameter/speedView = 0.5
-shader_parameter/tintColor = null
-shader_parameter/fesnelAmount = null
+shader_parameter/tintColor = Color(0, 0, 0, 1)
+shader_parameter/fesnelAmount = 0.0
 shader_parameter/distortionVertex = 0.03
 shader_parameter/speedVertex = 0.1
 
