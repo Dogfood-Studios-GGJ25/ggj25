@@ -4,7 +4,11 @@
 [ext_resource type="Script" uid="uid://bu7y1ey1krs43" path="res://Scenes/Settings/Settings.gd" id="2_vk4sf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3eb43"]
-bg_color = Color(0.666667, 0.666667, 0.666667, 1)
+bg_color = Color(0, 0, 0, 0.8)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_wahew"]
 font_size = 32
@@ -23,7 +27,7 @@ layout_mode = 0
 offset_left = -823.0
 offset_top = -433.0
 offset_right = -200.0
-offset_bottom = -87.0
+offset_bottom = -47.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3eb43")
 
 [node name="TitleLabel" type="Label" parent="SettingsPanel"]
@@ -41,62 +45,95 @@ label_settings = SubResource("LabelSettings_wahew")
 [node name="MusicVolLabel" type="Label" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 139.0
+offset_top = 159.0
 offset_right = 171.0
-offset_bottom = 162.0
-text = "Music Volume
-"
+offset_bottom = 182.0
+text = "Music Volume"
 
 [node name="SFXVolLabel" type="Label" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 181.0
+offset_top = 221.0
 offset_right = 171.0
-offset_bottom = 204.0
-text = "SFX Volume
-"
+offset_bottom = 244.0
+text = "SFX Volume"
 
 [node name="InvYLabel" type="Label" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 223.0
+offset_top = 283.0
 offset_right = 171.0
-offset_bottom = 246.0
+offset_bottom = 306.0
 text = "Invert Y-axis"
 
 [node name="MusicVolSlider" type="HSlider" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 284.0
-offset_top = 130.0
+offset_top = 150.0
 offset_right = 574.0
-offset_bottom = 169.0
+offset_bottom = 189.0
 step = 5.0
 value = 50.0
+tick_count = 5
+ticks_on_borders = true
+
+[node name="MusicVolMin" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 189.0
+offset_right = 304.0
+offset_bottom = 204.0
+text = "0%"
+
+[node name="MusicVolMax" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 189.0
+offset_right = 574.0
+offset_bottom = 204.0
+text = "100%"
 
 [node name="SFXVolSlider" type="HSlider" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 284.0
-offset_top = 178.0
+offset_top = 212.0
 offset_right = 574.0
-offset_bottom = 217.0
+offset_bottom = 251.0
 step = 5.0
 value = 50.0
+tick_count = 5
+ticks_on_borders = true
+
+[node name="SFXVolMin" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 251.0
+offset_right = 304.0
+offset_bottom = 266.0
+text = "0%"
+
+[node name="SFXVolMax" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 251.0
+offset_right = 574.0
+offset_bottom = 266.0
+text = "100%"
 
 [node name="InvYCheck" type="CheckButton" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 281.0
-offset_top = 227.0
+offset_top = 287.0
 offset_right = 325.0
-offset_bottom = 251.0
+offset_bottom = 311.0
 
 [node name="CloseButton" type="Button" parent="SettingsPanel"]
 layout_mode = 0
 offset_left = 453.0
-offset_top = 281.0
+offset_top = 341.0
 offset_right = 594.0
-offset_bottom = 324.0
-text = "Close
-"
+offset_bottom = 384.0
+text = "Close"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="value_changed" from="SettingsPanel/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
